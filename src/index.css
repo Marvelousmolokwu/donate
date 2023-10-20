@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    body{
+        @apply bg-backgroundcolor
+    }
+    h1, h2{
+      @apply  font-bold text-2xl lg:text-3xl
+    }
+    h3, h4{
+        @apply font-semibold text-lg lg:text-xl
+    }
+    input,select{
+        @apply block w-full p-2 border border-overlay rounded-lg focus:border focus:border-primary 
+    }
+    label{
+        @apply block mt-2 font-semibold
+    }
+    a{
+        @apply relative py-1 cursor-pointer
+      }
+      a::before{
+        @apply content-[''] absolute bottom-[-2px] h-1 w-0 bg-accent rounded-3xl transition-[width] duration-300 ease-in-out
+      }
+      a:hover::before{
+       @apply w-full
+      }
+}
+
+@layer components{
+    .btn{
+
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    -webkit-transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+
+    }
+    .btn:active {
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+    .btn:hover{
+        box-shadow: 0 0 20px rgba(0,0,0,0.5); 
+        filter: brightness(120%);
+
+    }
+    .container{
+     @apply max-w-[85%] lg:max-w-[75%] mx-auto my-5
+    }
+}
+@layer utilities{
+    .active-modal{
+        @apply overflow-y-hidden
+}
+.d-flex{
+   @apply flex justify-center items-center 
+}
+
+}
