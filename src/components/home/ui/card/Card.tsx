@@ -1,4 +1,4 @@
-import React from 'react'
+
 type cardPorps ={
     image:string
     title: string
