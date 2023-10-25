@@ -19,7 +19,7 @@ export const HomeModal = ({handleClick, modal}: modalProps) => {
 <div>
 
   <Link to="/donor/form1" className="hover:before:w-0"  >
-    {(!modal)}
+  
 
         <div className="flex items-center justify-center px-6 py-4 bg-secondary">
           <img src="https://res.cloudinary.com/ddgyd8szc/image/upload/v1693576100/Currency-rafiki_k4y81t.svg" alt="" width={"150px"} />

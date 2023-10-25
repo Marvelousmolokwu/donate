@@ -1,10 +1,10 @@
-import { Sidetext } from "../ui/sidetext";
+import { Sidetext } from "../../ui/sidetext";
 import {useState} from "react"
-import { ImageInput } from "../ui/imageInput";
+import { ImageInput } from "../../ui/imageInput";
 import { Link, useNavigate } from "react-router-dom"
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { Visibilityinput } from "../ui/visibilityinput";
+import { Visibilityinput } from "../../ui/visibilityinput";
 
 
 

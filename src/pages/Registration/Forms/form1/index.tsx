@@ -1,10 +1,10 @@
 import { Link, Navigate, useParams } from "react-router-dom"
-import { useLoader } from "../../../hooks/useLoader";
-import { Loader } from "../../../components/loader/loader";
-import { Sidetext } from "../ui/sidetext";
+import { useLoader } from "../../../../hooks/useLoader";
+import { Loader } from "../../../../components/loader/loader";
+import { Sidetext } from "../../ui/sidetext";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { Visibilityinput } from "../ui/visibilityinput";
-import { useModal } from "../../../hooks/useModal";
+import { Visibilityinput } from "../../ui/visibilityinput";
+import { useModal } from "../../../../hooks/useModal";
 
 
 export const Form1 = () => {
@@ -74,7 +74,7 @@ Date of Birth:
   <input type="text" name="social_link" id="social_link" />
 </label>
 
- <Link to={`/${user}/form2/`}>
+ <Link to={`/${user}/form2`}>
 <label className=' text-primary text-right  cursor-pointer text-2xl hover:brightness-200 ' >Next <ArrowForwardIcon/></label>
 </Link>
  </form>

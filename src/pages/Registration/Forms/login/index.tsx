@@ -1,7 +1,7 @@
 
 
-import { Sidetext } from "../ui/sidetext" 
-import { Visibilityinput } from "../ui/visibilityinput"
+import { Sidetext } from "../../ui/sidetext" 
+import { Visibilityinput } from "../../ui/visibilityinput"
 
 export const Login = () => {
   return (

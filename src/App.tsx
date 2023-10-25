@@ -27,8 +27,8 @@ function App() {
   <Route path="/" element={<React.Suspense fallback={<Loader/>}><LazyAbout /></React.Suspense>} />
   <Route path={"/:user/form1"} element={<Form1  />}/>
   <Route path={"/:user/form2"} element={<Form2/>}/>
-  <Route path="login" element={<Login/>}/>
-  <Route path="forgotpassword" element={<ForgotPassword/>}/>
+  <Route path="/login" element={<Login/>}/>
+  <Route path="/forgotpassword" element={<ForgotPassword/>}/>
   
       </Routes>
       
