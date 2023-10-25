@@ -18,7 +18,7 @@ export const HomeModal = ({handleClick, modal}: modalProps) => {
   <div className="flex flex-col lg:flex-row text-center gap-4" >
 <div>
 
-  <Link to="/donor/form1" className="hover:before:w-0"  >
+  <Link to="/forgotpassword" className="hover:before:w-0"  >
   
 
         <div className="flex items-center justify-center px-6 py-4 bg-secondary">
@@ -31,7 +31,7 @@ export const HomeModal = ({handleClick, modal}: modalProps) => {
         </Link></div>
   
   
-      <Link to="/user/form1" className="hover:before:w-0">
+      <Link to="/forgotpassword" className="hover:before:w-0">
       <div className="flex items-center justify-center   px-6 py-4 bg-secondary">
         <img src="https://res.cloudinary.com/ddgyd8szc/image/upload/v1693576100/Authentication-bro_yobvrn.svg" alt="" width={"150px"} />
       </div>

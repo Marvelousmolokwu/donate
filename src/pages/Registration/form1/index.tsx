@@ -1,10 +1,10 @@
 import { Link, Navigate, useParams } from "react-router-dom"
-import { useLoader } from "../../../../hooks/useLoader";
-import { Loader } from "../../../../components/loader/loader";
-import { Sidetext } from "../../ui/sidetext";
+import { useLoader } from "../../../hooks/useLoader";
+import { Loader } from "../../../components/loader/loader";
+import { Sidetext } from "../ui/sidetext";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { Visibilityinput } from "../../ui/visibilityinput";
-import { useModal } from "../../../../hooks/useModal";
+import { Visibilityinput } from "../ui/visibilityinput";
+import { useModal } from "../../../hooks/useModal";
 
 
 export const Form1 = () => {
