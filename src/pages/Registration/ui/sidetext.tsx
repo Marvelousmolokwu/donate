@@ -1,10 +1,15 @@
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import { Logo } from '../../../components/ui/logo/Logo';
+import { Logo } from '../../../components/logo/Logo';
+import { Link } from 'react-router-dom';
 
-
-export const Sidetext = () => {
+type Props={
+  content: string
+  path: string
+  login_signup:string
+}
+export const Sidetext = ({content, path, login_signup}: Props) => {
   return (
 <>
 <section className=' ' >
@@ -20,7 +25,7 @@ export const Sidetext = () => {
       
       
       <h3 className='mt-10'>Let's make the world a better place one donation at a time.</h3>
-      <p className="font-normal"> Already have an Account ? <a className="text-accent ">Login</a></p>
+      <p className="font-normal"> {content}  <Link className="text-accent " to={path === "/" ? "/": "/login"}>{login_signup}</Link></p>
       <div className='flex gap-6'><InstagramIcon className='cursor-pointer'/>
       <FacebookIcon className='cursor-pointer'/>
       <TwitterIcon className='cursor-pointer'/>

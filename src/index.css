@@ -17,7 +17,7 @@
         @apply block w-full p-2 border border-overlay rounded-lg focus:border focus:border-primary 
     }
     label{
-        @apply block mt-2 font-semibold
+        @apply block my-2 font-normal 
     }
     a{
         @apply relative py-1 cursor-pointer

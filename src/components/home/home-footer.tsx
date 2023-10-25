@@ -1,5 +1,5 @@
-import { Logo } from "../ui/logo/Logo"
-import { Button } from "../ui/button/Button"
+import { Logo } from "../logo/Logo"
+import { Button } from "../button/Button" 
 
 type Props={
     handleClick: ( e: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>void

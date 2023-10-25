@@ -1,0 +1,12 @@
+Overview
+Pages > Homepage.tsx
+Pages > Registration > Forms > forgotpassword.tsx, form1.tsx, form2.tsx, login.tsx.
+- Registration also has the ui folder i used for the form1
+
+
+Components > button
+Components > logo
+Components > loader
+Components > text
+Components > home > home-about, home-footer, home-hero, home-modal
+components >  home > ui > card, typewriter

@@ -1,17 +1,22 @@
 
-import { Card } from '../ui/card/Card'
+import { Card } from "./ui/card/Card" 
 
 export const HomeAboutSection = () => {
   return (
 <section className='container text-center '>
     <h2 className=' py-5'>Why Choose Us</h2>
     <div className='flex flex-col gap-5 lg:flex-row lg:justify-between lg:gap-2'>
+  {/* the cards section */}
+
+
     <Card 
    image={"https://res.cloudinary.com/ddgyd8szc/image/upload/v1693575098/charity_1_eqlzf1.png"}
    title="Seamless Giving"
    cardContent="With our user-friendly app, sending donations has never been easier. A few taps on your device are all it takes to contribute to causes that matter."/>
     <Card image={"https://res.cloudinary.com/ddgyd8szc/image/upload/v1693576100/Currency-rafiki_k4y81t.svg"} title="Global Reach" cardContent="Our network spans across borders, connecting donors with reputable organizations and initiatives from various corners of the world."/>
    <Card image={"https://res.cloudinary.com/ddgyd8szc/image/upload/v1693576100/opacity_1_n4kl7j.png"} title="Transparency" cardContent="We're committed to transparency. Rest assured that your donations are directed to verified, impactful projects, and you'll receive updates on how your contribution is making a difference."/>
+    
+    {/* the section with the writeups */}
     </div>
     <section className="grid grid-cols-12 grid-rows-3 gap-3 text-backgroundcolor text-center text-xl lg:text-2xl py-10">
 

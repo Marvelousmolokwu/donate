@@ -1,14 +1,14 @@
 import { Link, Navigate, useParams } from "react-router-dom"
 import { useLoader } from "../../../hooks/useLoader";
 import { Loader } from "../../../components/loader/loader";
-import { Sidetext } from "./sidetext";
+import { Sidetext } from "../ui/sidetext";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Visibilityinput } from "../ui/visibilityinput";
 
-
-
-export const Form1 = () => {
+ const Form1 = () => {
   const { user = "" } = useParams() as { user: string };
   const { isloading} = useLoader()
+
 
  if(!["donor", "user"].includes(user)){
   return <Navigate to="/"/>
@@ -20,11 +20,11 @@ export const Form1 = () => {
      
      <div className="container flex flex-col gap-5 lg:flex lg:flex-row lg:justify-between lg:pt-20   ">
      
-      <Sidetext/>
+     <Sidetext content="Already have an Account?" path="/login" login_signup="Login"/>
 
     
- <form className="md:w-[70%] lg:w-[48%] overflow-visible "> 
-<h1 className="text-lightBlue">User</h1> 
+<form className="md:w-[70%] lg:w-[48%]  "> 
+<h1 className="text-accent">User</h1> 
  <label htmlFor="firstname">
   Firstname:
   <input type="text" name="firstname"  id="firstname" required/>
@@ -41,11 +41,20 @@ export const Form1 = () => {
 Date of Birth:
   <input type="date" name="dob"  id="dob" required/>
 </label>
+<label htmlFor="">
+  
+</label>
+<label htmlFor="">
+  password
+  <Visibilityinput name="password" id="password" />
+
+</label>
 <label htmlFor="email">
   Email:
   <input type="email" name="email" id="email" required/>
 </label>
 <label htmlFor="social_media">
+  
   Social media Account:
   <select  id="social_media" >
     <option value="x">X</option>
@@ -73,3 +82,4 @@ Date of Birth:
  
   )
 }
+export default Form1

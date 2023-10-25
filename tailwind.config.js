@@ -20,6 +20,9 @@ export default {
       green: "#3cb043"
     },
   extend: {
+    backgroundImage:{
+      profile:"url()"
+    },
   keyframes:{
   modal:{
   '0%':{
