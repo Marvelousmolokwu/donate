@@ -1,6 +1,7 @@
 
 
-import { Sidetext } from '../ui/sidetext'
+import { Sidetext } from "../ui/sidetext" 
+import { Visibilityinput } from "../ui/visibilityinput"
 
 export const Login = () => {
   return (
@@ -14,9 +15,9 @@ export const Login = () => {
   Email:
   <input type="text" />
   </label>
-  <label htmlFor="">
+  <label htmlFor="login_password">
     Password:
-    <input type="password" />
+  <Visibilityinput name="login_password" id="login_password"/>
   </label>
   <input type="submit"value={"Submit"} className='text-backgroundcolor bg-primary my-5'/> 
   <a href="" className='text-accent'>Sign in with social media account</a>

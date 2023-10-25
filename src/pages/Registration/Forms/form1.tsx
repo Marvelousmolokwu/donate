@@ -5,7 +5,7 @@ import { Sidetext } from "../ui/sidetext";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Visibilityinput } from "../ui/visibilityinput";
 
- const Form1 = () => {
+export const Form1 = () => {
   const { user = "" } = useParams() as { user: string };
   const { isloading} = useLoader()
 
@@ -18,7 +18,7 @@ import { Visibilityinput } from "../ui/visibilityinput";
     <> 
      {isloading ? <Loader/> : 
      
-     <div className="container flex flex-col gap-5 lg:flex lg:flex-row lg:justify-between lg:pt-20   ">
+     <div className="container flex flex-col gap-5 lg:flex lg:flex-row lg:justify-between lg:pt-20 overflow-y-visible   ">
      
      <Sidetext content="Already have an Account?" path="/login" login_signup="Login"/>
 
@@ -82,4 +82,3 @@ Date of Birth:
  
   )
 }
-export default Form1
