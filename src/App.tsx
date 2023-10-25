@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 
@@ -17,14 +17,15 @@ const LazyAbout = React.lazy(()=> import("./pages/home/home.page"))
 
 function App() {
   const { isloading} = useLoader()
+ 
 
   return (
     <>
     {isloading ? <Loader/>:     <BrowserRouter>
       <Routes>
   
-  <Route path="/" element={<React.Suspense fallback={<Loader/>}><LazyAbout/></React.Suspense>} />
-  <Route path={`/:user/form1`} element={<Form1 />}/>
+  <Route path="/" element={<React.Suspense fallback={<Loader/>}><LazyAbout /></React.Suspense>} />
+  <Route path={`/:user/form1`} element={<Form1  />}/>
   <Route path={`/:user/form2`} element={<Form2/>}/>
   <Route path="login" element={<Login/>}/>
   <Route path="forgotpassword" element={<ForgotPassword/>}/>

@@ -5,7 +5,7 @@
 
 @layer base{
     body{
-        @apply bg-backgroundcolor overflow-y-visible
+        @apply bg-backgroundcolor overflow-y-visible 
     }
     h1, h2{
       @apply  font-bold text-2xl lg:text-3xl
@@ -50,7 +50,7 @@
 
     }
     .container{
-     @apply max-w-[85%] lg:max-w-[75%] mx-auto my-5
+     @apply max-w-[85%] lg:max-w-[75%] mx-auto h-full my-5 overflow-y-visible
     }
 }
 @layer utilities{

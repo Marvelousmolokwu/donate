@@ -16,15 +16,20 @@ export const HomeModal = ({handleClick, modal}: modalProps) => {
         <h1 className="">Choose your account type</h1>
       
   <div className="flex flex-col lg:flex-row text-center gap-4" >
+<div>
 
-  <Link to="/donor/form1" className="hover:before:w-0">
+  <Link to="/donor/form1" className="hover:before:w-0"  >
+    {(!modal)}
+
         <div className="flex items-center justify-center px-6 py-4 bg-secondary">
           <img src="https://res.cloudinary.com/ddgyd8szc/image/upload/v1693576100/Currency-rafiki_k4y81t.svg" alt="" width={"150px"} />
         </div>
         <div className="bg-kit p-2">
           <h3 className="text-primary">Donor</h3>
           </div>
-        </Link>
+         
+        </Link></div>
+  
   
       <Link to="/user/form1" className="hover:before:w-0">
       <div className="flex items-center justify-center   px-6 py-4 bg-secondary">

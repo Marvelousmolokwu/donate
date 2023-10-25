@@ -4,6 +4,8 @@ import { Loader } from "../../../components/loader/loader";
 import { Sidetext } from "../ui/sidetext";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Visibilityinput } from "../ui/visibilityinput";
+import { useModal } from "../../../hooks/useModal";
+
 
 export const Form1 = () => {
   const { user = "" } = useParams() as { user: string };
@@ -13,18 +15,22 @@ export const Form1 = () => {
  if(!["donor", "user"].includes(user)){
   return <Navigate to="/"/>
  }
+ const {modal, Setmodal} = useModal()
+ if (modal){
+  Setmodal(false)
+ }
   return (
    
     <> 
      {isloading ? <Loader/> : 
-     
+  
      <div className="container flex flex-col gap-5 lg:flex lg:flex-row lg:justify-between lg:pt-20 overflow-y-visible   ">
-     
+   
      <Sidetext content="Already have an Account?" path="/login" login_signup="Login"/>
 
     
 <form className="md:w-[70%] lg:w-[48%]  "> 
-<h1 className="text-accent">User</h1> 
+<h1 className="text-accent">{user === "donor" ? "Donor":"User" }</h1> 
  <label htmlFor="firstname">
   Firstname:
   <input type="text" name="firstname"  id="firstname" required/>
