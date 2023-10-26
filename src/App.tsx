@@ -22,11 +22,11 @@ function App() {
 createRoutesFromElements(
   <Route>
   
-  <Route index element={<React.Suspense fallback={"loading"}><LazyAbout /></React.Suspense>} ></Route>
+  <Route path="/home" element={<React.Suspense fallback={"loading"}><LazyAbout /></React.Suspense>} ></Route>
   <Route path={"/:user/form1"} element={<Form1  />}/>
   <Route path={"/:user/form2"} element={<Form2/>}/>
   <Route path="login" element={<Login/>}/>
-  <Route path="forgotpassword" element={<ForgotPassword/>}/>
+  <Route index element={<ForgotPassword/>}/>
   
       </Route>
 )
