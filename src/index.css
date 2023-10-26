@@ -5,7 +5,7 @@
 
 @layer base{
     body{
-        @apply bg-backgroundcolor overflow-y-visible 
+        @apply bg-backgroundcolor  
     }
     h1, h2{
       @apply  font-bold text-2xl lg:text-3xl

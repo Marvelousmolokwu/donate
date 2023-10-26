@@ -1,15 +1,15 @@
 import { Link, Navigate, useParams } from "react-router-dom"
-import { useLoader } from "../../../hooks/useLoader";
-import { Loader } from "../../../components/loader/loader";
+// import { useLoader } from "../../../hooks/useLoader";
+// import { Loader } from "../../../components/loader/loader";
 import { Sidetext } from "../ui/sidetext";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Visibilityinput } from "../ui/visibilityinput";
 import { useModal } from "../../../hooks/useModal";
 
 
-export const Form1 = () => {
+ const Form1 = () => {
   const { user = "" } = useParams() as { user: string };
-  const { isloading} = useLoader()
+  
 
 
  if(!["donor", "user"].includes(user)){
@@ -22,7 +22,7 @@ export const Form1 = () => {
   return (
    
     <> 
-     {isloading ? <Loader/> : 
+   
   
      <div className="container flex flex-col gap-5 lg:flex lg:flex-row lg:justify-between lg:pt-20 overflow-y-visible   ">
    
@@ -82,9 +82,10 @@ Date of Birth:
 
      
     
-    }
+    {/* } */}
       
     </>
  
   )
 }
+export default Form1

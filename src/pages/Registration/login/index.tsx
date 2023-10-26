@@ -3,7 +3,7 @@
 import { Sidetext } from "../ui/sidetext" 
 import { Visibilityinput } from "../ui/visibilityinput"
 
-export const Login = () => {
+ const Login = () => {
   return (
 <> 
   <section className='container flex flex-col gap-5 lg:flex lg:flex-row lg:justify-between lg:pt-20'>
@@ -29,3 +29,4 @@ export const Login = () => {
   
   )
 }
+export default Login

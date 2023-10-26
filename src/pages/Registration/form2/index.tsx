@@ -8,11 +8,12 @@ import { Visibilityinput } from "../ui/visibilityinput";
 
 
 
-export const Form2 = () => {
+const Form2 = () => {
   const [upload, setUpload] = useState<Boolean>(false)
   const [image, setImage] = useState<string>()
   const navigate = useNavigate();
-  const prev = () => {
+  const prev = (e: React.MouseEvent<HTMLButtonElement> ) => {
+    e.preventDefault()
 		navigate(-1);
   }
   return (
@@ -92,3 +93,4 @@ upload &&
 </>
   )
   }
+  export default Form2
