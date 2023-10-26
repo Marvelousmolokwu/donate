@@ -1,5 +1,5 @@
 import React from "react"
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+
 
 
 import { Form1 } from "./pages/Registration/form1"
@@ -12,27 +12,30 @@ import { useLoader } from "./hooks/useLoader"
 import { Loader } from "./components/loader/loader"
 // lazyload for homepage
 const LazyAbout = React.lazy(()=> import("./pages/home/home.page"))
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom"
 
 
 
 function App() {
   const { isloading} = useLoader()
+  const router = createBrowserRouter(
+createRoutesFromElements(
+  <Route>
+  
+  <Route index element={<React.Suspense fallback={<Loader/>}><LazyAbout /></React.Suspense>} ></Route>
+  <Route path={"/:user/form1"} element={<Form1  />}/>
+  <Route path={"/:user/form2"} element={<Form2/>}/>
+  <Route path="login" element={<Login/>}/>
+  <Route path="forgotpassword" element={<ForgotPassword/>}/>
+  
+      </Route>
+)
+  )
  
 
   return (
     <>
-    {isloading ? <Loader/>:     <BrowserRouter>
-      <Routes>
-  
-  <Route path="/" element={<React.Suspense fallback={<Loader/>}><LazyAbout /></React.Suspense>} ></Route>
-  <Route path={"/:user/form1"} element={<Form1  />}></Route>
-  <Route path={"/:user/form2"} element={<Form2/>}></Route>
-  <Route path="/login" element={<Login/>}></Route>
-  <Route path="/forgotpassword" element={<ForgotPassword/>}></Route>
-  
-      </Routes>
-      
-      </BrowserRouter> }
+    {isloading ? <Loader/>:  <RouterProvider router={router}/>}  
 
     
         
