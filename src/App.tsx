@@ -7,7 +7,7 @@ import { Form1 } from "./pages/Registration/form1"
 import { Form2 } from "./pages/Registration/form2"
 
 import { Login } from "./pages/Registration/login"
-import { ForgotPassword } from "./pages/Registration/forgotpassword/forgotPassword"
+import { ForgotPassword } from "./pages/Registration/forgotpassword"
 // import { useLoader } from "./hooks/useLoader"
 // import { Loader } from "./components/loader/loader"
 // // lazyload for homepage
