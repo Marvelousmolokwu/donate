@@ -10,3 +10,5 @@ Components > loader
 Components > text
 Components > home > home-about, home-footer, home-hero, home-modal
 components >  home > ui > card, typewriter
+
+hooks > useloader
