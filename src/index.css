@@ -5,7 +5,7 @@
 
 @layer base{
     body{
-        @apply bg-backgroundcolor  
+        @apply bg-backgroundcolor text-lg 
     }
     h1, h2{
       @apply  font-bold text-2xl lg:text-3xl
@@ -27,6 +27,9 @@
       }
       a:hover::before{
        @apply w-full
+      }
+      input[type="submit"]{
+        @apply cursor-pointer
       }
 }
 

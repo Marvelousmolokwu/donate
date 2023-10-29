@@ -22,7 +22,7 @@ const Login = () => {
           <p className="text-center">Or</p>
           <label htmlFor="">
             Email:
-            <input type="text" />
+            <input type="text"       required />
           </label>
           <label htmlFor="login_password">
             Password:

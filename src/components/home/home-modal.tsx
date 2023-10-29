@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 
+
 type modalProps = {
   handleClick: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   modal: boolean;
 };
 
 export const HomeModal = ({ handleClick, modal }: modalProps) => {
+
   return (
     <>
       {modal && (

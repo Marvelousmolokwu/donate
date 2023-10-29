@@ -66,7 +66,7 @@ const Form1 = () => {
             <input type="text" name="social_link" id="social_link" />
           </label>
 
-          <Link to={`/${user}/form2`}>
+          <Link to={`/${user}/form2`} >
             <label className=" text-primary text-right  cursor-pointer text-2xl hover:brightness-200 ">
               Next <ArrowForwardIcon />
             </label>

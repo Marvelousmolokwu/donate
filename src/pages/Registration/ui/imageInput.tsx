@@ -23,7 +23,7 @@ const [filename, setfilename] = useState<string>("no selected file")
           }, 2000)
           
         }
-      }}/>
+      }}       required/>
     <div className="border border-overlay rounded-md p-1 w-full h-16 relative ">{
       image ? <img src={image} alt={filename} className="h-full w-full object-cover
       "/> : ""

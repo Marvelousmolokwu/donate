@@ -1,12 +1,10 @@
 import React from "react";
-
-import { ForgotPassword } from "../pages/Registration/forgotpassword";
-
-// // lazyload for homepage
+ // lazyload for homepage
 const LazyAbout = React.lazy(() => import("../pages/home"));
 const LazyForm1 = React.lazy(() => import("../pages/Registration/form1"));
 const LazyForm2 = React.lazy(() => import("../pages/Registration/form2"));
 const LazyLogin = React.lazy(() => import("../pages/Registration/login"));
+const LazyForgotPassword = React.lazy(()=> import("../pages/Registration/forgotpassword"))
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -52,7 +50,7 @@ export const Routes = () => {
             </React.Suspense>
           }
         />
-        <Route path="forgotpassword" element={<ForgotPassword />} />
+        <Route path="forgotpassword" element={<React.Suspense fallback={<Loader/>}><LazyForgotPassword /></React.Suspense>} />
         <Route path="*" element={<Notfound />} />
       </Route>
     )
