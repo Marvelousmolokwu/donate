@@ -1,10 +1,10 @@
 import React from "react";
  // lazyload for homepage
-const LazyAbout = React.lazy(() => import("../pages/home"));
-const LazyForm1 = React.lazy(() => import("../pages/Registration/form1"));
-const LazyForm2 = React.lazy(() => import("../pages/Registration/form2"));
-const LazyLogin = React.lazy(() => import("../pages/Registration/login"));
-const LazyForgotPassword = React.lazy(()=> import("../pages/Registration/forgotpassword"))
+const LazyAbout = React.lazy(() => import("../pages/home/Home"));
+const LazyForm1 = React.lazy(() => import("../pages/Registration/form1/Form1"));
+const LazyForm2 = React.lazy(() => import("../pages/Registration/form2/Form2"));
+const LazyLogin = React.lazy(() => import("../pages/Registration/login/Login"));
+const LazyForgotPassword = React.lazy(()=> import("../pages/Registration/forgotpassword/Forgotpassword"))
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -12,7 +12,7 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import { Notfound } from "../pages/not.found";
+import { Notfound } from "../pages/not.found/Not-found";
 import { Loader } from "../components/loader/loader";
 import { useUserLoggedIn } from "../utilities/context";
 

@@ -2,9 +2,8 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { Logo } from "../../../components/logo/Logo";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useUserLoggedIn } from "../../../utilities/context";
-
 
 type Props = {
   content: string;
@@ -12,18 +11,17 @@ type Props = {
   login_signup: string;
 };
 export const Sidetext = ({ content, path, login_signup }: Props) => {
-  const navigate = useNavigate()
-  const {handleLogin , loggedIn} = useUserLoggedIn()
-  const handleClick =(e: React.MouseEvent<HTMLButtonElement>)=>{
-    console.log("me")
-    {loggedIn ? handleLogin(false) : handleLogin(true) }
-    
+  const navigate = useNavigate();
+  const { handleLogin, loggedIn } = useUserLoggedIn();
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+ 
+    {
+      loggedIn ? handleLogin(false) : handleLogin(true);
+    }
 
-    e.preventDefault()
-    navigate(`${path}`)
-    
-
-  }
+    e.preventDefault();
+    navigate(`${path}`);
+  };
 
   return (
     <>
@@ -43,9 +41,7 @@ export const Sidetext = ({ content, path, login_signup }: Props) => {
           <p className="font-normal">
             {" "}
             {content}{" "}
-            <button className="text-accent" onClick={
-handleClick
-            }>
+            <button className="text-accent" onClick={handleClick}>
               {login_signup}
             </button>
           </p>

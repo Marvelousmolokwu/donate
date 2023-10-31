@@ -6,15 +6,15 @@ import { UserLoggedIn } from "./utilities/context";
 
 export type UserLoggedIntype = {
   loggedIn: boolean;
-  handleLogin: (term: boolean) => void;
+  handleLogin: (state: boolean) => void;
 };
 
 function App() {
   const [loggedIn, setLoggedin] = useState(false);
   const { isloading } = useLoader();
-  function handleLogin (term: boolean) {
+  function handleLogin (state: boolean) {
     console.log("hack")
-    setLoggedin(term);
+    setLoggedin(state);
     
   };
 

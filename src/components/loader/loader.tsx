@@ -10,7 +10,7 @@ export const Loader = () => {
  
     height={4}
     width={150}
-    aria-label="Loading Spinner"
+    aria-label="Loading bar"
     data-testid="loader"/></div>
     )
     

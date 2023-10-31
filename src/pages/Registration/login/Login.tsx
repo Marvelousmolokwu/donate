@@ -2,20 +2,10 @@ import { Link } from "react-router-dom";
 import { Sidetext } from "../ui/sidetext";
 import { Visibilityinput } from "../ui/visibilityinput";
 
-
-
-
-
-
 const Login = () => {
-
-
-
-
-
   return (
     <>
-      <section className="container flex flex-col gap-5 lg:flex lg:flex-row lg:justify-between lg:pt-20">
+      <main className="container flex flex-col gap-5 lg:flex lg:flex-row lg:justify-between lg:pt-20">
         <Sidetext
           content="don't have an Account?"
           path="/"
@@ -24,15 +14,15 @@ const Login = () => {
         <form action="" className="md:w-[70%] lg:w-[48%]  ">
           <h2>Login</h2>
           <label htmlFor="" className="">
-          <a href="" className="text-lightBlue text-center underline  ">
-          <h3>#  Sign in with social media account</h3>
-          </a>
+            <a href="" className="text-lightBlue text-center underline  ">
+              <h3># Sign in with social media account</h3>
+            </a>
           </label>
-          
+
           <p className="text-center">Or</p>
           <label htmlFor="">
             Email:
-            <input type="text"       required />
+            <input type="text" required />
           </label>
           <label htmlFor="login_password">
             Password:
@@ -43,9 +33,9 @@ const Login = () => {
             value={"Submit"}
             className="text-backgroundcolor bg-primary my-5"
           />
-         <Link to={"/forgotpassword"}>Forgot password ?</Link>
+          <Link to={"/forgotpassword"}>Forgot password ?</Link>
         </form>
-      </section>
+      </main>
     </>
   );
 };

@@ -18,7 +18,7 @@ const Form1 = () => {
   }
   return (
     <>
-      <div className="container flex flex-col gap-5 lg:flex lg:flex-row lg:justify-between lg:pt-20 overflow-y-visible   ">
+      <main className="container flex flex-col gap-5 lg:flex lg:flex-row lg:justify-between lg:pt-20 overflow-y-visible   ">
         <Sidetext
           content="Already have an Account?"
           path="/login"
@@ -72,7 +72,7 @@ const Form1 = () => {
             </label>
           </Link>
         </form>
-      </div>
+      </main>
 
       {/* } */}
     </>

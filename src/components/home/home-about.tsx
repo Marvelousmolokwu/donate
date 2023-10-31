@@ -3,7 +3,7 @@ import { Card } from "./ui/card/Card";
 export const HomeAboutSection = () => {
   return (
     <section className="container text-center ">
-      <h2 className=" py-5">Why Choose Us</h2>
+      <h1 className=" py-5 lg:text-5xl">Why Choose Us</h1>
       <div className="flex flex-col gap-5 lg:flex-row lg:justify-between lg:gap-2">
         {/* the cards section */}
 

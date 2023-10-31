@@ -1,13 +1,10 @@
 import { Logo } from "../logo/Logo";
-import { Button } from "../button/Button";
-import { useUserLoggedIn } from "../../utilities/context";
+import { Button } from "./ui/button/Button";
+import { Props } from "../../utilities/types";
 
-type Props = {
-  
-  handleClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-};
+
 export const HomeFooter = ({ handleClick }: Props) => {
-  const { loggedIn } = useUserLoggedIn();
+
   return (
     <footer className="bg-secondary relative bottom-0 right-0 left-0">
       <section className="max-w-[85%] lg:max-w-[75%] mx-auto bg-secondary flex flex-col gap-3 py-16    lg:flex-row lg:justify-between lg:items-center">
@@ -71,7 +68,7 @@ export const HomeFooter = ({ handleClick }: Props) => {
         </div>
         <Button
           handleClick={handleClick}
-          content={loggedIn ? "Login": "Sign up Now"}
+          content={"Sign up Now"}
           btnClasses="bg-primary text-backgroundcolor w-[50%] lg:w-auto"
         />
       </section>
