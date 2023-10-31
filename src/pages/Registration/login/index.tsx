@@ -2,7 +2,17 @@ import { Link } from "react-router-dom";
 import { Sidetext } from "../ui/sidetext";
 import { Visibilityinput } from "../ui/visibilityinput";
 
+
+
+
+
+
 const Login = () => {
+
+
+
+
+
   return (
     <>
       <section className="container flex flex-col gap-5 lg:flex lg:flex-row lg:justify-between lg:pt-20">

@@ -8,13 +8,16 @@ const LazyForgotPassword = React.lazy(()=> import("../pages/Registration/forgotp
 import {
   createBrowserRouter,
   createRoutesFromElements,
+  Navigate,
   Route,
   RouterProvider,
 } from "react-router-dom";
 import { Notfound } from "../pages/not.found";
 import { Loader } from "../components/loader/loader";
+import { useUserLoggedIn } from "../utilities/context";
 
 export const Routes = () => {
+  const {loggedIn} = useUserLoggedIn()
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route>
@@ -29,6 +32,8 @@ export const Routes = () => {
         <Route
           path={"/:user/form1"}
           element={
+            loggedIn ?
+            <Navigate to={"/"} />:
             <React.Suspense fallback={<Loader />}>
               <LazyForm1 />
             </React.Suspense>
@@ -37,6 +42,7 @@ export const Routes = () => {
         <Route
           path={"/:user/form2"}
           element={
+          
             <React.Suspense fallback={<Loader />}>
               <LazyForm2 />
             </React.Suspense>

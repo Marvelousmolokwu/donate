@@ -1,10 +1,10 @@
 
 import { createContext, useContext } from "react"
-import { UserLoggedIntype } from "./App"
+import { UserLoggedIntype } from "../App"
 
 export const UserLoggedIn = createContext<UserLoggedIntype>({
     loggedIn: false,
-    setLoggedin:()=>{}
+   handleLogin:() => {}
 })
 
 export const useUserLoggedIn = () => useContext(UserLoggedIn)

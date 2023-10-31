@@ -1,49 +1,43 @@
 import { Sidetext } from "../ui/sidetext";
-import { useState } from "react";
+import React, { useState } from "react";
 import { ImageInput } from "../ui/imageInput";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Visibilityinput } from "../ui/visibilityinput";
-import { useUserLoggedIn } from "../../../context";
-
+import { useUserLoggedIn } from "../../../utilities/context";
 
 const Form2 = () => {
   const [upload, setUpload] = useState<Boolean>(false);
   const [image, setImage] = useState<string>();
-
-  // react hooks
+  const { loggedIn, handleLogin } = useUserLoggedIn();
   const navigate = useNavigate();
-const {loggedIn, setLoggedin } = useUserLoggedIn()
-
-
+ 
+// previous button
   const prev = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     navigate(-1);
   };
-  const handleLoggedin = (e:React.MouseEvent<HTMLButtonElement>)=>{
-   
-
-e.preventDefault()
-setLoggedin(!loggedIn)
-
-if(loggedIn){
-
-  navigate("/login")
-}
-  }
-        
+  // the submit button
+  const handleLoggedin = (e: React.MouseEvent<HTMLButtonElement>) => {
   
+   {handleLogin(true)}
+   e.preventDefault();
+   if (loggedIn) {
+      navigate("/login", {replace: true});
+    }
+  };
+
   return (
     <>
-    <div className="container flex flex-col gap-5 lg:flex lg:flex-row lg:justify-between lg:pt-20   ">
+      <div className="container flex flex-col gap-5 lg:flex lg:flex-row lg:justify-between lg:pt-20   ">
         <Sidetext
           content="Already have an Account?"
           path="/login"
           login_signup="Login"
         />
 
-        <form  className="md:w-[70%] lg:w-[48%]">
+        <form className="md:w-[70%] lg:w-[48%]">
           {upload && (
             <label className="text-accent bg-backgroundcolor p-5 shadow-md fixed top-10 rounded-md z-20">
               file uploaded!
@@ -51,7 +45,7 @@ if(loggedIn){
           )}
           <label htmlFor="bvn_input">
             Insert your BVN
-            <Visibilityinput name="bvn_input" id="bvn_input"     />
+            <Visibilityinput name="bvn_input" id="bvn_input" />
           </label>
           Select a payment threshold:
           <select id="payment_threshold">
@@ -118,7 +112,6 @@ if(loggedIn){
           </div>
         </form>
       </div>
-      
     </>
   );
 };

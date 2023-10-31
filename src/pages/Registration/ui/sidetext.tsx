@@ -2,7 +2,9 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { Logo } from "../../../components/logo/Logo";
-import { Link } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
+import { useUserLoggedIn } from "../../../utilities/context";
+
 
 type Props = {
   content: string;
@@ -10,6 +12,19 @@ type Props = {
   login_signup: string;
 };
 export const Sidetext = ({ content, path, login_signup }: Props) => {
+  const navigate = useNavigate()
+  const {handleLogin , loggedIn} = useUserLoggedIn()
+  const handleClick =(e: React.MouseEvent<HTMLButtonElement>)=>{
+    console.log("me")
+    {loggedIn ? handleLogin(false) : handleLogin(true) }
+    
+
+    e.preventDefault()
+    navigate(`${path}`)
+    
+
+  }
+
   return (
     <>
       <section className=" ">
@@ -28,9 +43,11 @@ export const Sidetext = ({ content, path, login_signup }: Props) => {
           <p className="font-normal">
             {" "}
             {content}{" "}
-            <Link className="text-accent " to={path === "/" ? "/" : "/login"}>
+            <button className="text-accent" onClick={
+handleClick
+            }>
               {login_signup}
-            </Link>
+            </button>
           </p>
           <div className="flex gap-6">
             <InstagramIcon className="cursor-pointer" />
