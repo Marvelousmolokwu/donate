@@ -27,9 +27,9 @@ const Homepage = () => {
   return (
     <>
       <HomeModal modal={modal} handleClick={handleClick} />
-      <HomeHero handleClick={handleClick} />
+      <HomeHero handleClick={handleClick} btnClasses={""} content={""} />
       <HomeAboutSection />
-      <HomeFooter handleClick={handleClick} />
+      <HomeFooter handleClick={handleClick} btnClasses={""} content={""} />
     </>
   );
 };
