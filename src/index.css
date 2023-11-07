@@ -64,5 +64,7 @@
    @apply flex justify-center items-center 
 }
 
-
+.active-btn{
+  @apply bg-primary text-backgroundcolor
+}
 }

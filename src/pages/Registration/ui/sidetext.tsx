@@ -4,6 +4,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import { Logo } from "../../../components/logo/Logo";
 import { useNavigate } from "react-router-dom";
 import { useUserLoggedIn } from "../../../utilities/context";
+import Login from "../login/Login";
 
 type Props = {
   content: string;
@@ -33,7 +34,7 @@ export const Sidetext = ({ content, path, login_signup }: Props) => {
           />
         </div>
         <div className="flex flex-col gap-10">
-          <Logo />
+          <Logo logoClasses={""} />
 
           <h3 className="mt-10">
             Let's make the world a better place one donation at a time.

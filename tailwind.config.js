@@ -21,7 +21,7 @@ export default {
     },
   extend: {
     backgroundImage:{
-      profile:"url()"
+      profile:"url('https://res.cloudinary.com/ddgyd8szc/image/upload/v1693992668/user_kqx5w2.png')"
     },
   keyframes:{
   modal:{

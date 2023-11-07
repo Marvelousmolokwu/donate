@@ -1,12 +1,15 @@
 import { Outlet } from "react-router-dom"
 import { Navbar } from "../components/navbar/Navbar"
+import { useState } from "react";
 
 
 export const DashboardLayout = () => {
+  const [opennav, setOpennav] = useState(false);
   return (
-    <><Navbar/>
+    <><Navbar opennav={opennav} setOpennav={setOpennav}/>
     <div className="h-20"></div>
-    <Outlet/></>
+    <main onClick={()=>(setOpennav(false))}><Outlet/></main>
+    </>
 
   )
 }
