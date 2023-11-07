@@ -1,4 +1,4 @@
-import { Props } from "../../../../utilities/types";
+import { Props } from "../../utilities/types";
 
 export const Button = ({ content, btnClasses, handleClick }: Props) => {
 

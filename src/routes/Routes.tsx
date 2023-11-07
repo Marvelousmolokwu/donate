@@ -15,6 +15,8 @@ import {
 import { Notfound } from "../pages/not.found/Not-found";
 import { Loader } from "../components/loader/loader";
 import { useUserLoggedIn } from "../utilities/context";
+import { DashboardLayout } from "../Layouts/DashboardLayout";
+import { Dashboard } from "../pages/dsahboard/dashboard";
 
 export const Routes = () => {
   const {loggedIn} = useUserLoggedIn()
@@ -57,6 +59,9 @@ export const Routes = () => {
           }
         />
         <Route path="forgotpassword" element={<React.Suspense fallback={<Loader/>}><LazyForgotPassword /></React.Suspense>} />
+        <Route path="/dashboard" element={<DashboardLayout/>}>
+          <Route index element={<Dashboard/>}/>
+        </Route>
         <Route path="*" element={<Notfound />} />
       </Route>
     )

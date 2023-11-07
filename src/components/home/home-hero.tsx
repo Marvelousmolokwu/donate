@@ -1,6 +1,6 @@
 
 import { Logo } from "../logo/Logo";
-import { Button } from "./ui/button/Button";
+import { Button } from "../button/Button";
 import { TypingEffect } from "./ui/typewriter/Typewriter";
 import { ParagraphText } from "../text/Text";
 import { useUserLoggedIn } from "../../utilities/context";

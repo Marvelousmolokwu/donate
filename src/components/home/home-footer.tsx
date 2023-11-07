@@ -1,5 +1,5 @@
 import { Logo } from "../logo/Logo";
-import { Button } from "./ui/button/Button";
+import { Button } from "../button/Button";
 import { Props } from "../../utilities/types";
 
 

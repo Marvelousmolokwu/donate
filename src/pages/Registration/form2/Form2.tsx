@@ -90,7 +90,7 @@ const Form2 = () => {
               />
               <span
                 className="
- rounded-full bg-accent text-backgroundcolor w-6 text-center pb-2 h-6 font-bold absolute bottom-2 right-0"
+ rounded-full bg-accent text-backgroundcolor w-6 flex items-center justify-center h-6 font-bold absolute bottom-2 right-0"
               >
                 +
               </span>
