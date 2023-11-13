@@ -8,7 +8,7 @@ export const HomeFooter = ({ handleClick }: Props) => {
   return (
     <footer className="bg-secondary relative bottom-0 right-0 left-0">
       <section className="max-w-[85%] lg:max-w-[75%] mx-auto bg-secondary flex flex-col gap-3 py-16    lg:flex-row lg:justify-between lg:items-center">
-        <Logo />
+        <Logo logoClasses={""} />
         <div className="">
           <ul>
             <li>

@@ -1,7 +1,7 @@
 import React from "react";
  // lazyload for homepage
 const LazyAbout = React.lazy(() => import("../pages/home/Home"));
-const LazyForm1 = React.lazy(() => import("../pages/Registration/form1/Form1"));
+const LazyForm1 = React.lazy(() => import("../pages/Registration/form1/Form1").then((LazyForm1:any)=>({default: LazyForm1})));
 const LazyForm2 = React.lazy(() => import("../pages/Registration/form2/Form2"));
 const LazyLogin = React.lazy(() => import("../pages/Registration/login/Login"));
 const LazyForgotPassword = React.lazy(()=> import("../pages/Registration/forgotpassword/Forgotpassword"))

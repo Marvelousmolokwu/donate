@@ -1,8 +1,8 @@
-import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
+import {  useNavigate, useParams } from "react-router-dom";
 // import { useLoader } from "../../../hooks/useLoader";
 // import { Loader } from "../../../components/loader/loader";
 import { Sidetext } from "../ui/sidetext";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+// import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Visibilityinput } from "../ui/visibilityinput";
 
 import { useDispatch } from "react-redux";
@@ -106,7 +106,7 @@ const Form1 = () => {
         </form>
       </main>
 
-      {/* } */}
+    
     </>
   );
 };

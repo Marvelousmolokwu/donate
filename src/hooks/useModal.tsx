@@ -5,16 +5,17 @@ export const useModal = () => {
   const [modalOpen, SetModalOpen] = useState(false);
   const ModalComp =((content:React.ReactNode)=><Modal open={modalOpen} content={content} onclose={hideModal}/>)
 
-  const ShowModal = ()=>{SetModalOpen(true)
-   }
+  const ShowModal = ()=>SetModalOpen(true)
+   
   
-const hideModal =()=>{SetModalOpen(false)
-  }
+const hideModal =()=>SetModalOpen(false)
+  
 
   
   return {
    ShowModal,
    ModalComp,
+ 
   
   };
 };

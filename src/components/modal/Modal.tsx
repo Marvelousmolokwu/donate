@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 
 
+
 type modalProps={
     open: boolean;
     content: ReactNode;
@@ -9,6 +10,7 @@ type modalProps={
 }
 
 export const Modal = ({open, content, onclose}:modalProps) => {
+
   
   return (
     <>
