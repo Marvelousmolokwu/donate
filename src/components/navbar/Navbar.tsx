@@ -3,12 +3,23 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 
-import { Link } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 
 type Props ={
   opennav:boolean,
   setOpennav:React.Dispatch<React.SetStateAction<boolean>>
 }
+  const navStyle =({isActive}:any)=>{
+    
+return{
+
+    borderBottom: isActive ? "4px solid #22457f " : "",
+    borderRadius: isActive ? "5%": ""
+    
+}
+  }
+
+
 export const Navbar = ({opennav, setOpennav}:Props) => {
  
   return (
@@ -22,15 +33,15 @@ export const Navbar = ({opennav, setOpennav}:Props) => {
             <Logo logoClasses={"text-backgroundcolor lg:text-textcolor "} />
             <div className="ml-auto lg:hidden"> <button className="text-backgroundcolor px-3 pb-1 bg-kit rounded-lg  mr-5 "><SearchRoundedIcon fontSize="medium"/>search...</button>
             <button
-              className="ml-auto cursor-pointer  text-backgroundcolor  "
+              className="ml-auto cursor-pointer  text-backgroundcolor bg-kit px-2 pb-1 rounded-lg "
               onClick={() => {
                 setOpennav(!opennav);
               }}
             >
               {opennav ? (
-                <CloseIcon fontSize="large" />
+                <CloseIcon fontSize="medium" />
               ) : (
-                <MenuIcon fontSize="large" />
+                <MenuIcon fontSize="medium" />
               )}
             </button></div>
         
@@ -41,12 +52,12 @@ export const Navbar = ({opennav, setOpennav}:Props) => {
           <ul
             className={`${
               opennav ? "-translate-y-0" : "-translate-y-full"
-            }  transition-all ease-out delay-150 -z-20 bg-backgroundcolor opacity-[0.9]  text-primary flex flex-col items-center lg:flex-row lg:gap-5 pt-10 lg:pt-0 lg:z-30 lg:-translate-y-0 lg:opacity-100`}
+            }  transition-all ease-out delay-150 -z-20 bg-backgroundcolor opacity-[0.9]  text-primary flex flex-col items-center gap-3 lg:flex-row lg:gap-5 pt-10 lg:pt-0 lg:z-30 lg:-translate-y-0 lg:opacity-100`}
           >
-            <Link to={"/"}>Home</Link>
-            <Link to={"/"}>Explore</Link>
-            <Link to={"/"}>Accounts</Link>
-            <Link to={"/"}>Help</Link>
+            <NavLink style={navStyle} to={"/dashboard"}>Home</NavLink>
+            <NavLink style={navStyle} to={"/"}>Explore</NavLink>
+            <NavLink style={navStyle} to={"/"}>Accounts</NavLink>
+            <NavLink style={navStyle} to={"/"}>Help</NavLink>
           </ul>
 
         </nav>

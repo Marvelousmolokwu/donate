@@ -3,6 +3,8 @@ import { Loader } from "./components/loader/loader";
 import { useLoader } from "./hooks/useLoader";
 import { Routes } from "./routes/Routes";
 import { UserLoggedIn } from "./utilities/context";
+import { Provider } from "react-redux";
+import store from "./stores/store";
 
 export type UserLoggedIntype = {
   loggedIn: boolean;
@@ -20,9 +22,10 @@ function App() {
 
   return (
     <>
-      <UserLoggedIn.Provider value={{ loggedIn, handleLogin}}>
+    <Provider store={store}><UserLoggedIn.Provider value={{ loggedIn, handleLogin}}>
         {isloading ? <Loader /> : <Routes />}
-      </UserLoggedIn.Provider>
+      </UserLoggedIn.Provider></Provider>
+      
     </>
   );
 }

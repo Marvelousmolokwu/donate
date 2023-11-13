@@ -1,22 +1,52 @@
-import { Link, Navigate, useParams } from "react-router-dom";
+import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 // import { useLoader } from "../../../hooks/useLoader";
 // import { Loader } from "../../../components/loader/loader";
 import { Sidetext } from "../ui/sidetext";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Visibilityinput } from "../ui/visibilityinput";
-import { useModal } from "../../../hooks/useModal";
+
+import { useDispatch } from "react-redux";
+import {useState} from "react"
+import { setUser } from "../../../features/user/userslice";
+
+
 
 const Form1 = () => {
   const { user = "" } = useParams() as { user: string };
+  const navigate = useNavigate()
+  interface FormData {
+    name: string;
+  
+  }
+ 
+    const dispatch = useDispatch();
+    const [formData, setFormData] = useState<FormData>({
+      name: '',
+     
+    });
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+ 
+  
 
+  const handleSignup = (e:React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    dispatch(setUser(formData));
+    navigate(`/${user}/form2`)
+  };
   if (!["donor", "user"].includes(user)) {
-    return <Navigate to="/" />;
+    return navigate("/");
   }
-  const { modal, Setmodal } = useModal();
-  if (modal) {
-    Setmodal(false);
-  }
+  
+    
+
   return (
+
+
+
+
     <>
       <main className="container flex flex-col gap-5 lg:flex lg:flex-row lg:justify-between lg:pt-20 overflow-y-visible   ">
         <Sidetext
@@ -25,11 +55,12 @@ const Form1 = () => {
           login_signup="Login"
         />
 
-        <form className="md:w-[70%] lg:w-[48%]  ">
+        <form className="md:w-[70%] lg:w-[48%]  "  onSubmit={handleSignup}>
           <h2 className="text-accent">{user === "donor" ? "Donor" : "User"}</h2>
           <label htmlFor="firstname">
             Firstname:
-            <input type="text" name="firstname" id="firstname" required />
+            <input type="text" name="name" id="firstname"     value={formData.name}
+            onChange={handleInputChange} required  />
           </label>
           <label htmlFor="lastname">
             Lastname:
@@ -66,11 +97,12 @@ const Form1 = () => {
             <input type="text" name="social_link" id="social_link" />
           </label>
 
-          <Link to={`/${user}/form2`} >
+          {/* <Link to={`/${user}/form2`} >
             <label className=" text-primary text-right  cursor-pointer text-2xl hover:brightness-200 ">
               Next <ArrowForwardIcon />
-            </label>
-          </Link>
+            </label> */}
+          {/* </Link> */}
+          <button type="submit">submit</button>
         </form>
       </main>
 

@@ -1,4 +1,4 @@
-import { Card } from "./ui/card/Card";
+import { Card } from "./card/Card";
 
 export const HomeAboutSection = () => {
   return (

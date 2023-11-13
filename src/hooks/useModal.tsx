@@ -1,15 +1,20 @@
 import { useState } from "react";
+import { Modal } from "../components/modal/Modal";
 
 export const useModal = () => {
-  const [modal, Setmodal] = useState<boolean>(false);
+  const [modalOpen, SetModalOpen] = useState(false);
+  const ModalComp =((content:React.ReactNode)=><Modal open={modalOpen} content={content} onclose={hideModal}/>)
 
-  if (modal) {
-    document.body.classList.add("active-modal");
-  } else {
-    document.body.classList.remove("active-modal");
+  const ShowModal = ()=>{SetModalOpen(true)
+   }
+  
+const hideModal =()=>{SetModalOpen(false)
   }
+
+  
   return {
-    modal,
-    Setmodal,
+   ShowModal,
+   ModalComp,
+  
   };
 };

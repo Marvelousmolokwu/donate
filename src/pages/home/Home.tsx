@@ -12,21 +12,23 @@ import { useUserLoggedIn } from "../../utilities/context";
 
 
 const Homepage = () => {
-  const { modal, Setmodal } = useModal();
+  const {ModalComp, ShowModal} = useModal()
+
   const {loggedIn} = useUserLoggedIn()
   const navigate = useNavigate()
 
   
   const handleClick = () => {
-   {loggedIn ? navigate("/login") :Setmodal(!modal);}
+   {loggedIn ? navigate("/login") :ShowModal()}
       
   
 
   };
   
   return (
+    
     <>
-      <HomeModal modal={modal} handleClick={handleClick} />
+      {ModalComp(<HomeModal/>)}
       <HomeHero handleClick={handleClick} btnClasses={""} content={""} />
       <HomeAboutSection />
       <HomeFooter handleClick={handleClick} btnClasses={""} content={""} />

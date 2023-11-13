@@ -1,7 +1,7 @@
 
 import { Logo } from "../logo/Logo";
 import { Button } from "../button/Button";
-import { TypingEffect } from "./ui/typewriter/Typewriter";
+import { TypingEffect } from "./typewriter/Typewriter";
 import { ParagraphText } from "../text/Text";
 import { useUserLoggedIn } from "../../utilities/context";
 import { Props } from "../../utilities/types";
@@ -17,7 +17,7 @@ export const HomeHero = ({ handleClick }: Props) => {
       <nav className="     bg-backgroundcolor  drop-shadow-sm fixed top-0 left-0 right-0 z-20 ">
         <div className="flex justify-between container">
           {" "}
-          <Logo />
+          <Logo logoClasses={""} />
           <Button
             btnClasses=" text-backgroundcolor bg-primary"
             content={loggedIn ? "Login" : "SignUp"}

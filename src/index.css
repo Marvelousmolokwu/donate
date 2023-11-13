@@ -5,7 +5,7 @@
 
 @layer base{
     body{
-        @apply bg-backgroundcolor text-xl 
+        @apply bg-backgroundcolor text-xl  overflow-y-visible
     }
     h1, h2{
       @apply  font-bold text-2xl lg:text-3xl
@@ -20,7 +20,7 @@
         @apply block my-2 font-normal 
     }
     a{
-        @apply relative py-1 cursor-pointer
+        @apply relative  cursor-pointer
       }
       a::before{
         @apply content-[''] absolute bottom-[-2px] h-1 w-0 bg-accent rounded-3xl transition-[width] duration-300 ease-in-out
@@ -53,12 +53,12 @@
 
     }
     .container{
-     @apply max-w-[85%] lg:max-w-[75%] mx-auto h-full my-5 overflow-y-visible
+     @apply max-w-[85%] lg:max-w-[75%] mx-auto h-full my-5 
     }
 }
 @layer utilities{
     .active-modal{
-        @apply overflow-y-hidden
+        @apply 
 }
 .d-flex{
    @apply flex justify-center items-center 
@@ -66,5 +66,8 @@
 
 .active-btn{
   @apply bg-primary text-backgroundcolor
+}
+.card-styles{
+  @apply my-5 shadow-md p-6  rounded-md bg-kit 
 }
 }
