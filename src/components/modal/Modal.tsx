@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 
 
+
 type modalProps={
     open: boolean;
     content: ReactNode;
@@ -9,6 +10,7 @@ type modalProps={
 }
 
 export const Modal = ({open, content, onclose}:modalProps) => {
+
   
   return (
     <>
@@ -20,7 +22,7 @@ export const Modal = ({open, content, onclose}:modalProps) => {
             {" "}
           </div>
           <div
-            className=" shadow-md bg-backgroundcolor flex justify-center items-center   w-[70%] lg:w-1/2  p-8 rounded-md fixed z-50  top-10 lg:top-[15%] left-[15%] lg:left-[25%]
+            className=" shadow-md bg-backgroundcolor flex justify-center items-center   w-[90%] lg:w-1/2  p-8 rounded-md fixed z-50  top-10 lg:top-[15%] left-[5%] lg:left-[25%]
     animate-[modal_0.3s_linear]"
           >
             <button onClick={onclose} className=" cursor-pointer absolute top-3 right-5">

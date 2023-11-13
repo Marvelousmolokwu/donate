@@ -13,7 +13,7 @@ export const HomeModal = () => {
                 <img
                   src="https://res.cloudinary.com/ddgyd8szc/image/upload/v1693576100/Currency-rafiki_k4y81t.svg"
                   alt=""
-                  className="w-[100px] lg:w-[150px]"
+                  className="w-[150px]"
                  
                 />
               </div>
@@ -29,7 +29,7 @@ export const HomeModal = () => {
                 src="https://res.cloudinary.com/ddgyd8szc/image/upload/v1693576100/Authentication-bro_yobvrn.svg"
                 alt=""
                 width={"150px"}
-                className="w-[100px] lg:w-[150px]"
+                className="w-[150px]"
            
               />
             </div>
