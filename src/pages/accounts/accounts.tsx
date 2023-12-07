@@ -1,6 +1,6 @@
 
 
-import { NavLink, Outlet, useParams } from "react-router-dom";
+import { NavLink, Outlet} from "react-router-dom";
 import { Button } from "../../components/button/Button";
 import { useModal } from "../../hooks/useModal";
 import { Payout } from "../../components/dashboard-components/payout";
