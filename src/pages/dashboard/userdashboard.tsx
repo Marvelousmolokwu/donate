@@ -1,4 +1,4 @@
-import { Button } from "../../components/button/Button";
+
 
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
@@ -15,7 +15,7 @@ import { selectUser } from '../../features/user/userslice';
 import donor from "../../data/donors.json"
 import AdSlider from "../../components/dashboard-components/adSlider";
 import { Link } from "react-router-dom";
-import { Payout } from "../../components/dashboard-components/payout";
+
 
 export const Dashboard = () => {
   const [visible, setVisible] = useState(true);

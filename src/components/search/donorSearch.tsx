@@ -1,9 +1,10 @@
-import { Link, useNavigate } from "react-router-dom";
+
 import user from "../../data/donors.json";
 import { useState } from "react";
 import { useModal } from "../../hooks/useModal";
+import { useNavigate } from "react-router-dom";
 export const DonorSearch = () => {
-    const {hideModal, ShowModal} = useModal()
+    const {hideModal} = useModal()
     const [searchlist, setSearchlist] = useState("")
     const navigate = useNavigate()
     

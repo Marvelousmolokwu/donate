@@ -9,7 +9,7 @@ import { Payout } from "../../components/dashboard-components/payout";
 
 
 export const Accounts = () => {
-  const { user = "" } = useParams() as { user: string };
+  
   const {ModalComp, ShowModal} = useModal()
   const navStyle = ({ isActive }: any) => {
  

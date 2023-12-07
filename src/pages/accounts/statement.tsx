@@ -8,7 +8,7 @@ import { useModal } from "../../hooks/useModal";
 
 
 export const Statement = () => {
-    const [Statement, setStatement] = useState<null | string>(null)
+    const Statement : null | string = null
  
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
