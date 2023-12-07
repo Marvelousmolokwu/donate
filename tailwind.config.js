@@ -8,6 +8,7 @@ export default {
     fontFamily:{
       poppins:['Poppins', 'sans-serif'],
     },
+    
     colors:{
       textcolor:"#000",
       backgroundcolor:"#fff",
@@ -17,6 +18,7 @@ export default {
       accent:"#22457f",
       kit:"rgba(225,232,235, 0.2)",
       overlay:"rgba(49,49,49,0.5)",
+      skeletonColor:"rgba(49,49,49,0.1)",
       green: "#3cb043"
     },
   extend: {
@@ -24,7 +26,7 @@ export default {
       profile:"url('https://res.cloudinary.com/ddgyd8szc/image/upload/v1693992668/user_kqx5w2.png')"
     },
   keyframes:{
-  modal:{
+  modalactive:{
   '0%':{
         transform:' translateY(-100%)',
         opacity:'0'
@@ -33,8 +35,18 @@ export default {
         transform:' translateY(0%)',
         opacity:'1'
   }
-    }
-   }
+    },modalinactive:{
+      '0%':{
+            transform:' translateY(0%)',
+            opacity:'1'
+      },
+      '100%':{
+            transform:' translateY(-100%)',
+            opacity:'0'
+      }
+        }
+   },
+   
     },
   },
   plugins: [],

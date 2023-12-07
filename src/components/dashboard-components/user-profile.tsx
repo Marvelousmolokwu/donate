@@ -7,8 +7,10 @@ import { Button } from "../button/Button";
 
 type  Props ={
   picture: string
+  username: string
+  twitterlink: string
 }
-export const UserProfile = ({picture}:Props) => {
+export const UserProfile = ({picture, username, twitterlink}:Props) => {
 
     const [copied, setCopied] = useState(false)
     const referencelink = "uhuuh3444"
@@ -21,14 +23,13 @@ export const UserProfile = ({picture}:Props) => {
       })
   return (
     <>
-    <div className="bg-center bg-no-repeat h-24 w-24 rounded-full border-2 border-accent bg-profile">
+    <div className="bg-center  bg-no-repeat h-32 w-32 rounded-full bg-kit border-4 border-accent bg-profile ">
 <img src={picture} alt="" className="h-full w-full rounded-full"/>
 </div>
-<h3>User 1234</h3>
+<h3><span>@ {!username ? "user": username }</span></h3>
 <div className="flex gap-3">
-        <InstagramIcon className="cursor-pointer" />
-        <FacebookIcon className="cursor-pointer" />
-        <TwitterIcon className="cursor-pointer" />
+       
+        <a href={twitterlink}><TwitterIcon className="cursor-pointer" /></a>
       </div>
 <div className=" flex flex-col w-full gap-4" >
 <Button content="Accounts" handleClick={()=>{}} btnClasses="border-2 border-primary text-primary"/>

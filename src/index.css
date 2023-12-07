@@ -19,17 +19,21 @@
     label{
         @apply block my-2 font-normal 
     }
-    a{
+    .animated-links{
         @apply relative  cursor-pointer
       }
-      a::before{
+      .animated-links::before{
         @apply content-[''] absolute bottom-[-2px] h-1 w-0 bg-accent rounded-3xl transition-[width] duration-300 ease-in-out
       }
-      a:hover::before{
+      .animated-links:hover::before{
        @apply w-full
       }
       input[type="submit"]{
         @apply cursor-pointer
+      }
+      *{
+        scrollbar-width: thin;
+     
       }
 }
 
@@ -57,9 +61,7 @@
     }
 }
 @layer utilities{
-    .active-modal{
-        @apply 
-}
+
 .d-flex{
    @apply flex justify-center items-center 
 }
@@ -70,4 +72,36 @@
 .card-styles{
   @apply my-5 shadow-md p-6  rounded-md bg-kit 
 }
+.grid-height {@apply calc(100vh-10px)} ;
+
+
+.scrollbar::-webkit-scrollbar{
+  width: 5px;
+  height: 5px;
+}
+.scrollbar::-webkit-scrollbar-track{
+@apply bg-kit
+}
+.scrollbar::-webkit-scrollbar-thumb{
+@apply bg-secondary h-5 rounded-3xl
+}
+.headingSkeleton{
+  @apply h-3 rounded-full w-[40%] my-5
+}
+.textSkeleton{
+  @apply h-3  rounded-full my-3
+}
+.linkSkeleton{
+ @apply h-2  rounded-full my-3
+}
+.imageSkeleton{
+  @apply rounded-lg w-72 lg:w-[80%]  h-32
+}
+.boxSkeleton{
+  @apply rounded-lg   h-32
+}
+.profileSkeleton{
+  @apply rounded-full w-52 h-52
+}
+
 }

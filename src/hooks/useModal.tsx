@@ -15,7 +15,7 @@ const hideModal =()=>SetModalOpen(false)
   return {
    ShowModal,
    ModalComp,
- 
+ hideModal
   
   };
 };

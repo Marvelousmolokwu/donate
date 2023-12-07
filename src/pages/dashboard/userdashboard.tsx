@@ -12,30 +12,37 @@ import { Accordion } from "../../components/accordion/Accordion";
 
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/user/userslice';
+import donor from "../../data/donors.json"
+import AdSlider from "../../components/dashboard-components/adSlider";
+import { Link } from "react-router-dom";
+import { Payout } from "../../components/dashboard-components/payout";
 
 export const Dashboard = () => {
   const [visible, setVisible] = useState(true);
 
   const { ModalComp, ShowModal } = useModal();
   const user = useSelector(selectUser);
-
+  const [seemore, setSeemore] = useState(4)
+  const handleSeemore=()=>{
+    setSeemore(prev=> prev + 3)
+  }
+  
   return (
     <>
       <main className="container lg:max-w-[85%]">
-        <h1 className="font-semibold text-accent">Hello {user.name}</h1>
+        <h1 className="font-semibold text-accent">Hello  { !user.name ? "User": user.name} </h1>
 
-        <section className="lg:grid lg:grid-cols-4 lg:gap-4 lg:grid-rows-2 lg:place-items-start place-content-between">
+        <section className="lg:grid lg:grid-cols-4 lg:gap-4 lg:grid-rows-[20rem, 1fr] lg:place-items-start place-content-between">
           {/* the balance card */}
           <div className="lg:col-start-1  row-start-1 w-full">
             {" "}
             <div className="flex flex-col gap-3 shadow-md p-6 rounded-md text-left my-5 bg-kit  ">
               <div className="flex justify-between items-center  ">
                 <h1 className="text-lg font-semibold">Balance</h1>
-                <Button
-                  content="Payout"
-                  handleClick={() => {}}
-                  btnClasses="text-backgroundcolor bg-primary"
-                />
+                <Link to={"/donorlink/accounts/profile"} className="text-backgroundcolor bg-primary  rounded-md py-2 px-4 ">Payout</Link>
+                 
+               
+             
               </div>
               <div className=" flex justify-between">
                 <div
@@ -82,19 +89,34 @@ export const Dashboard = () => {
             <Charts />
           </div>
           {/* tab to see your donations */}
-          <div className="card-styles p-1  w-full  lg:col-start-4 lg:col-span-1">
+          <div className="p-1  w-full  lg:col-start-4 lg:col-span-1">
             <Accordion
               heading="Donations"
               content="You haven't made any donations yet!"
+              accordionStyles={"h-16"}
             />
+          </div>
+          {/* ad slider */}
+          <div className="lg:row-start-2 w-full ">
+            <AdSlider/>
           </div>
 {/* user profile */}
           <div className=" card-styles flex flex-col items-center gap-6 w-full relative lg:col-start-4 lg:col-span-1 lg:row-start-1 ">
-            <UserProfile picture={user.picture}/>
+            <UserProfile picture={user.picture} username={user.username} twitterlink={user.socialmedialink}/>
           </div>
           {/* list of top donors */}
-          <div className="lg:col-start-2 lg:col-span-2 lg:row-start-2 w-full">
-            <h2>Top Donors</h2>
+          <div className="lg:col-start-2 lg:col-span-2 lg:row-start-2 w-full mr-5">
+            <h2 className="mb-5">Top Donors</h2>
+          
+            {
+              <ul>
+                {donor.slice(0,seemore).map((donor)=> <li key={donor.id} className="border-b-2 border-accent  p-2   hover:bg-kit text-accent"><Link to ={`/donorlink/donorprofile/${donor.id}`}> <div className="flex items-center justify-between"><h4>{donor.id}. {donor.name}</h4> 
+                       
+                       <img src={`https://flagsapi.com/${donor.country}/flat/32.png`} alt=""  /></div>
+                       </Link> </li>)}
+                </ul>
+            }
+            <button className="text-accent flex ml-auto underline py-2" onClick={handleSeemore}><span>See more</span></button>
           </div>
         </section>
       </main>

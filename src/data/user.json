@@ -1,0 +1,166 @@
+[
+    {"NGO":[
+      {"id":"ngo1",
+        "name":"Mercycorps",
+        "img":"https://res.cloudinary.com/ddgyd8szc/image/upload/v1700089768/su-nyoto-kY8m5uDIW7Y-unsplash_fhynaa.jpg",
+        "about":"ac faucibus lectus luctus. Phasellus risus mi, tincidunt ultricies quam in, congue ornare ante. Proin rutrum non lacus id viverra. Integer orci erat, dictum eget dignissim quis, pulvinar vitae nisl.",
+        "history":"dolor lectus, viverra vel sagittis eu, aliquam non tellus. Vestibulum eu nisi pellentesque, iaculis est nec, mollis metus.",
+        "outreach":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed enim erat. Donec egestas aliquam sapien ullamcorper venenatis. Donec id quam nec tortor eleifend laoreet. Maecenas in justo erat. In at rutrum justo. Vivamus dolor lectus, viverra vel sagittis eu, aliquam non tellus. Vestibulum eu nisi pellentesque, iaculis est nec, mollis metus. Maecenas semper lectus et felis tempor, ac faucibus lectus luctus. Phasellus risus mi, tincidunt ultricies quam in, congue ornare ante. Proin rutrum non lacus id viverra. Integer orci erat, dictum eget dignissim quis, pulvinar vitae nisl."
+    },
+    {"id":"ngo2",
+    "name":"Doctors With Borders",
+    "img":"https://res.cloudinary.com/ddgyd8szc/image/upload/v1700089668/jon-tyson-yrwV3tYeE0Q-unsplash_if1lzr.jpg",
+    "about":"ac faucibus lectus luctus. Phasellus risus mi, tincidunt ultricies quam in, congue ornare ante. Proin rutrum non lacus id viverra. Integer orci erat, dictum eget dignissim quis, pulvinar vitae nisl.",
+    "history":"dolor lectus, viverra vel sagittis eu, aliquam non tellus. Vestibulum eu nisi pellentesque, iaculis est nec, mollis metus.",
+    "outreach":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed enim erat. Donec egestas aliquam sapien ullamcorper venenatis. Donec id quam nec tortor eleifend laoreet. Maecenas in justo erat. In at rutrum justo. Vivamus dolor lectus, viverra vel sagittis eu, aliquam non tellus. Vestibulum eu nisi pellentesque, iaculis est nec, mollis metus. Maecenas semper lectus et felis tempor, ac faucibus lectus luctus. Phasellus risus mi, tincidunt ultricies quam in, congue ornare ante. Proin rutrum non lacus id viverra. Integer orci erat, dictum eget dignissim quis, pulvinar vitae nisl."
+},
+{"id":"ngo3",
+"name":"Save the Children",
+"img":"https://res.cloudinary.com/ddgyd8szc/image/upload/v1700089681/atul-pandey-0f3bZHXZSz8-unsplash_rfak03.jpg",
+"about":"ac faucibus lectus luctus. Phasellus risus mi, tincidunt ultricies quam in, congue ornare ante. Proin rutrum non lacus id viverra. Integer orci erat, dictum eget dignissim quis, pulvinar vitae nisl.",
+"history":"dolor lectus, viverra vel sagittis eu, aliquam non tellus. Vestibulum eu nisi pellentesque, iaculis est nec, mollis metus.",
+"outreach":""
+},
+{"id":"ngo4",
+"name":"Care Health",
+"img":"https://res.cloudinary.com/ddgyd8szc/image/upload/v1700089593/mufid-majnun-0kr3Fx-B5dk-unsplash_hb9uuu.jpg",
+"about":"ac faucibus lectus luctus. Phasellus risus mi, tincidunt ultricies quam in, congue ornare ante. Proin rutrum non lacus id viverra. Integer orci erat, dictum eget dignissim quis, pulvinar vitae nisl.",
+"history":"dolor lectus, viverra vel sagittis eu, aliquam non tellus. Vestibulum eu nisi pellentesque, iaculis est nec, mollis metus.",
+"outreach":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed enim erat. Donec egestas aliquam sapien ullamcorper venenatis. Donec id quam nec tortor eleifend laoreet. Maecenas in justo erat. In at rutrum justo. Vivamus dolor lectus, viverra vel sagittis eu, aliquam non tellus. Vestibulum eu nisi pellentesque, iaculis est nec, mollis metus. Maecenas semper lectus et felis tempor, ac faucibus lectus luctus. Phasellus risus mi, tincidunt ultricies quam in, congue ornare ante. Proin rutrum non lacus id viverra. Integer orci erat, dictum eget dignissim quis, pulvinar vitae nisl."
+},
+{"id":"ngo5",
+"name":"To The Rescue",
+"img":"https://res.cloudinary.com/ddgyd8szc/image/upload/v1700090546/hanna-morris-3EkT6xb4K9w-unsplash_e6p7fp.jpg",
+"about":"ac faucibus lectus luctus. Phasellus risus mi, tincidunt ultricies quam in, congue ornare ante. Proin rutrum non lacus id viverra. Integer orci erat, dictum eget dignissim quis, pulvinar vitae nisl.",
+"history":"dolor lectus, viverra vel sagittis eu, aliquam non tellus. Vestibulum eu nisi pellentesque, iaculis est nec, mollis metus.",
+"outreach":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed enim erat. Donec egestas aliquam sapien ullamcorper venenatis. Donec id quam nec tortor eleifend laoreet. Maecenas in justo erat. In at rutrum justo. Vivamus dolor lectus, viverra vel sagittis eu, aliquam non tellus. Vestibulum eu nisi pellentesque, iaculis est nec, mollis metus. Maecenas semper lectus et felis tempor, ac faucibus lectus luctus. Phasellus risus mi, tincidunt ultricies quam in, congue ornare ante. Proin rutrum non lacus id viverra. Integer orci erat, dictum eget dignissim quis, pulvinar vitae nisl."
+},
+{"id":"ngo6",
+"name":"Help the People",
+"img":"https://res.cloudinary.com/ddgyd8szc/image/upload/v1700090546/hanna-morris-3EkT6xb4K9w-unsplash_e6p7fp.jpg",
+"about":"ac faucibus lectus luctus. Phasellus risus mi, tincidunt ultricies quam in, congue ornare ante. Proin rutrum non lacus id viverra. Integer orci erat, dictum eget dignissim quis, pulvinar vitae nisl.",
+"history":"dolor lectus, viverra vel sagittis eu, aliquam non tellus. Vestibulum eu nisi pellentesque, iaculis est nec, mollis metus.",
+"outreach":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed enim erat. Donec egestas aliquam sapien ullamcorper venenatis. Donec id quam nec tortor eleifend laoreet. Maecenas in justo erat. In at rutrum justo. Vivamus dolor lectus, viverra vel sagittis eu, aliquam non tellus. Vestibulum eu nisi pellentesque, iaculis est nec, mollis metus. Maecenas semper lectus et felis tempor, ac faucibus lectus luctus. Phasellus risus mi, tincidunt ultricies quam in, congue ornare ante. Proin rutrum non lacus id viverra. Integer orci erat, dictum eget dignissim quis, pulvinar vitae nisl."
+}
+
+   
+]
+    },
+    {"orphanage":[
+        {"id": "orp1",
+    "name":"Love home orphange",
+"img":"https://res.cloudinary.com/ddgyd8szc/image/upload/v1700311029/IMG_4449_ruwb8p.jpg",
+"about":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed enim erat.",
+"history":"",
+"outreach":""},
+{"id": "orp2",
+"name":"Mercy children orphanage",
+"img":"https://res.cloudinary.com/ddgyd8szc/image/upload/v1700310889/List-of-Orphanage-Homes-in-Lagos-With-their-Contact-Information_kkap9q.jpg",
+"about":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed enim erat. ",
+"history":"",
+"outreach":""},
+{"id": "orp3",
+"name":"Motherless babies Home",
+"img":"https://res.cloudinary.com/ddgyd8szc/image/upload/v1685903405/photo-1570545917537-873e36d4f64a_zsvafx.avif",
+"about":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed enim erat.",
+"history":"",
+"outreach":""},
+{"id": "orp4",
+"name":"Mother Theresa orphans",
+"img":"https://res.cloudinary.com/ddgyd8szc/image/upload/v1700089681/atul-pandey-0f3bZHXZSz8-unsplash_rfak03.jpg",
+"about":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed enim erat. ",
+"history":"",
+"outreach":""},
+{"id": "orp5",
+"name":"Little saints Orphans",
+"img":"https://res.cloudinary.com/ddgyd8szc/image/upload/v1700310645/pict_large_wxxwfm.jpg",
+"about":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed enim erat. ",
+"history":"",
+"outreach":""},
+{"id": "orp6",
+"name":"Heritage home Orphange",
+"img":"https://res.cloudinary.com/ddgyd8szc/image/upload/v1700310645/Orphanage-gets_qsdwah.jpg",
+"about":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed enim erat. ",
+"history":"",
+"outreach":""},
+{"id": "orp7",
+"name":"Destined Children's Orphanage",
+"img":"https://res.cloudinary.com/ddgyd8szc/image/upload/v1700090546/hanna-morris-3EkT6xb4K9w-unsplash_e6p7fp.jpg",
+"about":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed enim erat.  ",
+"history":"",
+"outreach":""},
+{"id": "orp8",
+"name":"heaven for orphans",
+"img":"https://res.cloudinary.com/ddgyd8szc/image/upload/v1700089801/hanna-morris-6BhCI5uWiFQ-unsplash_nh3ybg.jpg",
+"about":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed enim erat. ",
+"history":"",
+"outreach":""}
+
+    ]},
+   
+    {"others":[
+        {"id":"ort1",
+    "name":" International Committee of the Red Cross",
+    "img":"https://res.cloudinary.com/ddgyd8szc/image/upload/v1700314749/internally_displaced_people_ihiczy.jpg",
+    "about":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed enim erat.",
+    "history":"dolor lectus, viverra vel sagittis eu, aliquam non tellus. Vestibulum eu nisi pellentesque, iaculis est nec, mollis metus.",
+    "outreach":""
+
+    },
+    {"id":"ort2",
+    "name":"Maria's liver Cancer Treatment",
+    "img":"https://res.cloudinary.com/ddgyd8szc/image/upload/v1700314752/Untitled2_ijdfs5.jpg",
+    "about":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed enim erat.",
+    "history":"dolor lectus, viverra vel sagittis eu, aliquam non tellus. Vestibulum eu nisi pellentesque, iaculis est nec, mollis metus.",
+    "outreach":""
+
+    },
+    {"id":"ort3",
+    "name":"Fund kids that can't afford education",
+    "img":"",
+    "about":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed enim erat.",
+    "history":"dolor lectus, viverra vel sagittis eu, aliquam non tellus. Vestibulum eu nisi pellentesque, iaculis est nec, mollis metus.",
+    "outreach":""
+
+    },
+    {"id":"ort4",
+    "name":"Isearli Refugees",
+    "img":"https://res.cloudinary.com/ddgyd8szc/image/upload/v1700314748/AP23282412408591-1696857744_s8fdgg.jpg",
+    "about":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed enim erat.",
+    "history":"dolor lectus, viverra vel sagittis eu, aliquam non tellus. Vestibulum eu nisi pellentesque, iaculis est nec, mollis metus.",
+    "outreach":""
+
+    },
+    {"id":"ort5",
+    "name":"Covid Research",
+    "img":"https://res.cloudinary.com/ddgyd8szc/image/upload/v1700314748/7A675F43-E0F1-45C1-A724-E6EC223C40E1_xf60wn.jpg",
+    "about":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed enim erat.",
+    "history":"dolor lectus, viverra vel sagittis eu, aliquam non tellus. Vestibulum eu nisi pellentesque, iaculis est nec, mollis metus.",
+    "outreach":""
+
+    },
+    {"id":"ort6",
+    "name":"The insurgence Recovery Scheme",
+    "img":"https://res.cloudinary.com/ddgyd8szc/image/upload/v1700314749/5e21874d3_p5rsb0.jpg",
+    "about":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed enim erat.",
+    "history":"dolor lectus, viverra vel sagittis eu, aliquam non tellus. Vestibulum eu nisi pellentesque, iaculis est nec, mollis metus.",
+    "outreach":""
+
+    },      {"id":"ort7",
+    "name":"Sponor a Girl Child",
+    "img":"https://res.cloudinary.com/ddgyd8szc/image/upload/v1700314753/Untitled1_ytutbr.jpg",
+    "about":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed enim erat.",
+    "history":"dolor lectus, viverra vel sagittis eu, aliquam non tellus. Vestibulum eu nisi pellentesque, iaculis est nec, mollis metus.",
+    "outreach":""
+
+    },
+    {"id":"ort8",
+    "name":"Save the Sea",
+    "img":"https://res.cloudinary.com/ddgyd8szc/image/upload/v1700314755/Untitled_okmkvz.jpg",
+    "about":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed enim erat.",
+    "history":"dolor lectus, viverra vel sagittis eu, aliquam non tellus. Vestibulum eu nisi pellentesque, iaculis est nec, mollis metus.",
+    "outreach":""
+
+    }
+    ]}
+]

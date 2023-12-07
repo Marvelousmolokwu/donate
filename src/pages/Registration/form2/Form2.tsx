@@ -1,8 +1,8 @@
 import { Sidetext } from "../ui/sidetext";
 import React, { useState } from "react";
 import { ImageInput } from "../ui/imageInput";
-import { useNavigate } from "react-router-dom";
-// import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { useNavigate, useParams } from "react-router-dom";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Visibilityinput } from "../ui/visibilityinput";
 import { useUserLoggedIn } from "../../../utilities/context";
@@ -18,10 +18,11 @@ const Form2 = () => {
   const { loggedIn, handleLogin } = useUserLoggedIn();
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { user = "" } = useParams() as { user: string };
+
   
-  const user = useSelector(selectUser);
- 
-  
+  const userDetails = useSelector(selectUser);
+   
 
 // previous button
   const prev = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -33,8 +34,9 @@ const Form2 = () => {
   
    {handleLogin(true)}
    e.preventDefault();
+   console.log(user)
    if (loggedIn) {
-      navigate("/login", {replace: true});
+      navigate((`/${user}/login`), {replace: true});
     }
   };
 
@@ -85,7 +87,7 @@ const Form2 = () => {
                 if (files) {
                   const image = URL.createObjectURL(files[0]);
                   setImage( image)
-                  dispatch(setUser({...user, picture: image}))
+                  dispatch(setUser({...userDetails, picture: image}))
                   setUpload(true);
 
                   setTimeout(() => {
@@ -118,12 +120,7 @@ const Form2 = () => {
               </label>
             </button>
 
-            <button type="submit">
-              {/* <label className=" text-primary text-right  cursor-pointer text-2xl hover:brightness-200 ">
-                Submit <ArrowForwardIcon />
-              </label> */}
-              submit
-            </button>
+            <button className=" text-primary text-right flex ml-auto py-5   cursor-pointer text-2xl hover:brightness-200 " type="submit"><span>Next <ArrowForwardIcon /></span></button>
           </div>
         </form>
       </div>

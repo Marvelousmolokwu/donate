@@ -2,11 +2,17 @@ import { createSlice } from "@reduxjs/toolkit";
 interface user{
     name: string
     picture: string
+    username: string
+    instagram: string
+    email:string
 }
 
 const initialState : user={
     name: '',
-    picture:''
+    picture:'',
+    username: '',
+    instagram:'',
+    email:''
 }
 
 const userslice = createSlice({
@@ -16,6 +22,9 @@ const userslice = createSlice({
 setUser:(state, action)=>{
     state.name = action.payload.name
     state.picture = action.payload.picture
+    state.username = action.payload.username
+    state.instagram = action.payload.instagram
+    state.email = action.payload.email
 }
     }
 })
