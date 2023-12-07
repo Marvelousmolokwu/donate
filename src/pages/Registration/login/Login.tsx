@@ -20,7 +20,7 @@ const Login = () => {
         <form action="" className="md:w-[70%] lg:w-[48%]  " onSubmit={(e)=>{
           e.preventDefault()
           if (users === "donor") {
-            navigate("/donordashboard")
+            navigate("/donor/donordashboard")
             }else{
              navigate("/donorlink/dashboard")
             }

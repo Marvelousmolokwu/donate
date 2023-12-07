@@ -37,7 +37,7 @@ const Form1 = () => {
       <main className="container flex flex-col gap-5 lg:flex lg:flex-row lg:justify-between lg:pt-20 overflow-y-visible   ">
         <Sidetext
           content="Already have an Account?"
-          path="/login"
+          path={`/${user}/login`}
           login_signup="Login"
         />
         <form className="md:w-[70%] lg:w-[48%]  " onSubmit={handleSignup}>
