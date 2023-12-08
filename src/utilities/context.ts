@@ -1,7 +1,7 @@
 
 import { createContext, useContext } from "react"
 import { UserLoggedIntype } from "../App"
-import { amounttype } from "../pages/accounts/Donoraccount"
+import { amounttype } from "../pages/accounts/donoraccount"
 
 export const UserLoggedIn = createContext<UserLoggedIntype>({
     loggedIn: false,

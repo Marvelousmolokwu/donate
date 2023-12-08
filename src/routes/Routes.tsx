@@ -29,7 +29,7 @@ import { Security } from "../pages/accounts/security";
 import { Notifications } from "../pages/accounts/notifications";
 import { Statement } from "../pages/accounts/statement";
 import { Useraccounts } from "../pages/accounts/userAccount";
-import { Donoraccounts } from "../pages/accounts/Donoraccount";
+import { Donoraccounts } from "../pages/accounts/donoraccount";
 
 export const Routes = () => {
   const {loggedIn} = useUserLoggedIn()
