@@ -1,10 +1,10 @@
-import { Sidetext } from "../ui/sidetext";
+import { Sidetext } from "../../../components/registration-components/sidetext";
 import React, { useState } from "react";
-import { ImageInput } from "../ui/imageInput";
+import { ImageInput } from "../../../components/registration-components/imageInput";
 import { useNavigate, useParams } from "react-router-dom";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { Visibilityinput } from "../ui/visibilityinput";
+import { Visibilityinput } from "../../../components/registration-components/visibilityinput";
 import { useUserLoggedIn } from "../../../utilities/context";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../../features/user/userslice";
@@ -19,8 +19,6 @@ const Form2 = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user = "" } = useParams() as { user: string };
-
-  
   const userDetails = useSelector(selectUser);
    
 
@@ -42,7 +40,7 @@ const Form2 = () => {
 
   return (
     <>
-      <div className="container flex flex-col gap-5 lg:flex lg:flex-row lg:justify-between lg:pt-20   ">
+      <div className="container fc-flex gap-5 lg:flex lg:fr-flex lg:pt-20   ">
         <Sidetext
           content="Already have an Account?"
           path="/login"

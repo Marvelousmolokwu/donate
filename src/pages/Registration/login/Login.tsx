@@ -1,6 +1,6 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { Sidetext } from "../ui/sidetext";
-import { Visibilityinput } from "../ui/visibilityinput";
+import { Sidetext } from "../../../components/registration-components/sidetext";
+import { Visibilityinput } from "../../../components/registration-components/visibilityinput";
 
 const Login = () => {
   const navigate = useNavigate()
@@ -22,7 +22,7 @@ const Login = () => {
           if (users === "donor") {
             navigate("/donor/donordashboard")
             }else{
-             navigate("/donorlink/dashboard")
+             navigate("/user/dashboard")
             }
         }}>
           <h2>Login</h2>

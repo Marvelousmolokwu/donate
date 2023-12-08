@@ -1,30 +1,30 @@
 import { Logo } from "../logo/Logo";
 import { Button } from "../button/Button";
-import { Props } from "../../utilities/types";
+import { ButtonProps } from "../../utilities/types";
 
 
-export const HomeFooter = ({ handleClick }: Props) => {
+export const HomeFooter = ({ handleClick }: ButtonProps) => {
 
   return (
     <footer className="bg-secondary relative bottom-0 right-0 left-0">
-      <section className="max-w-[85%] lg:max-w-[75%] mx-auto bg-secondary flex flex-col gap-3 py-16    lg:flex-row lg:justify-between lg:items-center">
+      <section className="container bg-secondary flex flex-col gap-3 py-16    lg:fr-flex lg:items-start">
         <Logo logoClasses={""} />
         <div className="">
           <ul>
             <li>
-              <h3>Company</h3>
+              <h3 >Company</h3>
             </li>
             <li>
-              <a href="">FAQ's</a>
+              <a className="animated-links" href="">FAQ's</a>
             </li>
             <li>
-              <a href="">About us</a>
+              <a className="animated-links"  href="">About us</a>
             </li>
             <li>
-              <a href="">Our investors</a>
+              <a className="animated-links"  href="">Our investors</a>
             </li>
             <li>
-              <a href="">Partner with us</a>
+              <a className="animated-links"  href="">Partner with us</a>
             </li>
           </ul>
         </div>
@@ -34,13 +34,13 @@ export const HomeFooter = ({ handleClick }: Props) => {
               <h3>Legal</h3>
             </li>
             <li>
-              <a href="">Privacy policy</a>
+              <a className="animated-links"  href="">Privacy policy</a>
             </li>
             <li>
-              <a href="">Return policy</a>
+              <a className="animated-links"  href="">Return policy</a>
             </li>
             <li>
-              <a href="">Terms of Service</a>
+              <a className="animated-links" href="">Terms of Service</a>
             </li>
           </ul>
         </div>
@@ -50,19 +50,19 @@ export const HomeFooter = ({ handleClick }: Props) => {
               <h3>Let's Connect</h3>
             </li>
             <li>
-              <a href="">X</a>
+              <a className="animated-links"  href="">X</a>
             </li>
             <li>
-              <a href="">Instagram</a>
+              <a className="animated-links"  href="">Instagram</a>
             </li>
             <li>
-              <a href="">Facebook</a>
+              <a className="animated-links"  href="">Facebook</a>
             </li>
             <li>
-              <a href="">Linkedin</a>
+              <a className="animated-links"  href="">Linkedin</a>
             </li>
             <li>
-              <a href="">donatelink@gmail.com</a>
+              <a className="animated-links"  href="">donatelink@gmail.com</a>
             </li>
           </ul>
         </div>

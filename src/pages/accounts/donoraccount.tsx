@@ -4,6 +4,7 @@ import { NavLink, Outlet} from "react-router-dom";
 import { AccountHeader } from "./accountHeader";
 import { Addfunds } from "../../components/dashboard-components/addFunds";
 import { amountInputed } from "../../utilities/context";
+import { navStyle } from "../../utilities/types";
 import { useState } from "react";
 
 
@@ -20,17 +21,12 @@ export const Donoraccounts = () => {
   const [amount, setAmount] = useState<number>(0);
 
   const amountChange = (number:number)=>{
-    setAmount(prev => prev + number)
+
+    
+    setAmount(prev => prev + (number/ 1200) )
   }
 
-  const navStyle = ({ isActive }: any) => {
  
-    return {
-      borderBottom: isActive ? "3px solid #22457f " : "",
-      transition: isActive ? "border  linear  ": "",
-  
-    };
-  };
     
   return (
   <>
@@ -42,11 +38,11 @@ export const Donoraccounts = () => {
   
     
     <section>
-<ul className="grid grid-cols-4 text-center bg-kit  pt-3 text-sm md:text-lg lg:text-xl   font-semibold">
-   <NavLink style={navStyle} to={"profile"}>Profile</NavLink>
-    <NavLink style={navStyle} to={"security"}>Security</NavLink>
-    <NavLink style={navStyle} to={"notification"}>Notifications</NavLink>
-    <NavLink style={navStyle} to={"statement"}>Statements</NavLink>
+<ul className="grid grid-cols-4 text-center bg-kit  pt-3 text-[13px] sm:text-sm md:text-lg lg:text-xl   font-semibold">
+   <NavLink style={navStyle} to={"profile"}>profile</NavLink>
+    <NavLink style={navStyle} to={"security"}>security</NavLink>
+    <NavLink style={navStyle} to={"notification"}>notification</NavLink>
+    <NavLink style={navStyle} to={"statement"}>statement</NavLink>
 </ul>
 <section>
 

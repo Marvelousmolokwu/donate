@@ -72,7 +72,7 @@ export const Routes = () => {
           }
         />
         <Route path="forgotpassword" element={<React.Suspense fallback={<Loader/>}><LazyForgotPassword /></React.Suspense>} />
-        <Route path="/donorlink" element={<DashboardLayout/>}>
+        <Route path="user" element={<DashboardLayout/>}>
           <Route path="dashboard" element={<Dashboard/>}/>
           <Route path="donorprofile/:id" element={<Viewdonorprofile/>}/>
           <Route path="explore" element={<Explore />} />

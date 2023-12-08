@@ -102,7 +102,7 @@ export const Viewdonorprofile = () => {
                 <li key={donor.id}>
               
                   <SwiperSlide>
-                  <Link to={`/donorlink/donorprofile/${donor.id}` } onClick={()=> window.location.reload()}>
+                  <Link to={`/user/donorprofile/${donor.id}` } onClick={()=> window.location.reload()}>
                     <div className="shadow-md rounded-md my-2 p-5 flex flex-col items-center h-[12rem] text-center gap-3">
                       <div className="bg-center  bg-no-repeat h-20 w-20 rounded-full bg-kit border-4 border-accent bg-profile ">
                         <img

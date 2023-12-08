@@ -38,11 +38,11 @@ export const Addfunds = () => {
 
 </label>
 <input type="number" name="name" onChange={(e:React.ChangeEvent<HTMLInputElement>)=> setAmountToFund(parseInt(e.currentTarget.value))} />
-
+<p>$1 = N1200</p>
 <input type="submit" value={"Submit"} className="bg-primary text-backgroundcolor"  />
    </form> }
   
-   <section className={` ${amountInputed ?"-translate-x-0": "-translate-y-[200%]" } w-[100%]  -z-10 flex flex-col gap-5  `}>
+   <section className={` ${amountInputed ?"translate-y-0": "-translate-y-[250%]" } w-[100%]  -z-10 flex flex-col gap-5  `}>
     
   
     <h3>Confirm Payment</h3>
@@ -50,7 +50,7 @@ export const Addfunds = () => {
         <p>{user.name ? user.name : "User"}</p>
     }/>
     <Datacolumn contentName="Amount" content={
-        <p>N{amountAdded}</p>
+        <p>N{amountAdded.toLocaleString('NGN')}</p>
     }/>
     
    
@@ -61,8 +61,8 @@ export const Addfunds = () => {
     
   </section>
   {amountInputed && fundingSuccesful && <div className="text-center ">
-<h3>{`Your wallet was funded with N${amountAdded}! 🎉`}</h3>
-<Link to={"/donorlink/dashboard"} className=" text-primary font-semibold ">Back to home page</Link>
+<h3>{`Your wallet was funded with N${amountAdded.toLocaleString('NGN')}! 🎉`}</h3>
+<Link to={"/donor/dashboard"} className=" text-primary font-semibold ">Back to home page</Link>
     </div>}
   {amountInputed && !fundingSuccesful  && 
      <Button  content={"Add fund!"} btnClasses="bg-primary text-backgroundcolor "  handleClick={()=>AddFundsBtn()}/>

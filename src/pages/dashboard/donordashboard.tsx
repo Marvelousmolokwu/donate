@@ -2,7 +2,6 @@
 import { SetStateAction, useState } from "react";
 import { Button } from "../../components/button/Button";
 import user from "../../data/user.json"
-
 import { useModal } from "../../hooks/useModal";
 import { DonorBill } from "../../components/dashboard-components/donorBill";
 import { selectUser } from "../../features/user/userslice";
@@ -24,8 +23,8 @@ const handleDonateButtonClick = (userId: SetStateAction<string>) => {
     <>
  {ModalComp(<DonorBill name={selectedUserId}/>)}
               <section className="container text-primary">
-        <h1 className="mb-5">Hello {donor.name}</h1>
-        <section className="flex flex-col">
+        <h1 className="mb-5">Hello {donor.name ? donor.name : "User"}</h1>
+        <section className="fc-flex">
           <h1>NGO's</h1>
          <section className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
         
@@ -58,7 +57,7 @@ const handleDonateButtonClick = (userId: SetStateAction<string>) => {
           ngodata > 4? setngoData(4) : setngoData(ngodata + 4)
           }>{ngodata > 4?"Show less":"See more" }</button>
         </section>
-        <section className="flex flex-col">
+        <section className="fc-flex">
           <h2>Orphanages</h2>
           <section className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
           {user.map((usertype)=>usertype.orphanage?.slice(0, orphanagedata).map((item)=>(
@@ -89,7 +88,7 @@ const handleDonateButtonClick = (userId: SetStateAction<string>) => {
         
            </section>
            <button className="my-5 " onClick={()=> 
-          ngodata > 4? setOrphangeData(4) : setOrphangeData(orphanagedata + 4)
+          orphanagedata > 4? setOrphangeData(4) : setOrphangeData(orphanagedata + 4)
           }>{orphanagedata > 4?"Show less":"See more" }</button>
         </section>
        

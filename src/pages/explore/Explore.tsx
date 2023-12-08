@@ -6,7 +6,7 @@ interface NewsItem {
     author: string;
     title:string;
     url:string;
-    urlToImage:string;
+    urlToImage?:string;
     description:string;
   
   }
@@ -27,7 +27,7 @@ console.log(query)
 useEffect((
 
 )=>{
-  // https://newsapi.org/v2/top-headlines?country=us&apiKey=e0fd1f3c41064fe6a56767bca4023873
+ 
     axios(`https://newsapi.org/v2/everything?q=${query}&apiKey=e0fd1f3c41064fe6a56767bca4023873`).then((res) => {
         if (res.status === 200) {
           setData(res.data.articles);
@@ -42,7 +42,7 @@ useEffect((
         setRetryMessage("too many request, try again after awhile")
       }else{
         setError(error)
-        console.log(error)}
+     }
     })
       
     .finally(()=>
@@ -82,15 +82,15 @@ if (loading){
   <section className="container">
 
     <div className="lg:flex lg:justify-center ">
-    <div className="lg:w-[50%] flex justify-center text-primary items-center border-2 rounded-lg border-primary px-1 focus-within:border-4 focus-within:border-primary">
+    <div className="lg:w-[50%] flex justify-center text-primary items-center border rounded-lg border-primary px-1 focus-within:border-2 focus-within:border-primary">
   <SearchRoundedIcon fontSize="medium" /> 
     <input type="search" placeholder="Search" className="outline-none border-none w-full " onChange={handleChange} />
 </div>
     </div>
     
-    <h1 className="text-accent">Recent News</h1>
+    <h1 className="text-accent  hidden lg:block">Recent News</h1>
     {retryMessage && <p>{retryMessage}</p>}
-  {data === null ?<h1>data not found</h1>
+  {data?.length === 0 ?<h1 className="text-primary text-center">data not found!</h1>
 
   :data?.map((news, index)=>
   <article key={index} className="my-5" >
@@ -99,7 +99,7 @@ if (loading){
 <p>{news.description}</p>
 <a href={`${news.url}`} className="text-accent text-sm">{news.url}</a></div>
 
-<img src={`${news.urlToImage}`} alt="resource_img" className="rounded-lg w-[50%] lg:w-[20%] h-32" />
+<img src={`${news.urlToImage}`} alt="resource_img" className="rounded-lg w-full  sm:h-52 lg:w-[20%] lg:h-32" />
 
 
 </div>}

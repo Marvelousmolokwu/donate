@@ -1,10 +1,10 @@
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import { Logo } from "../../../components/logo/Logo";
+import { Logo } from "../logo/Logo";
 import { useNavigate } from "react-router-dom";
-import { useUserLoggedIn } from "../../../utilities/context";
-// import Login from "../login/Login";
+import { useUserLoggedIn } from "../../utilities/context";
+
 
 type Props = {
   content: string;
@@ -33,7 +33,7 @@ export const Sidetext = ({ content, path, login_signup }: Props) => {
             alt=""
           />
         </div>
-        <div className="flex flex-col gap-10">
+        <div className="fc-flex gap-10">
           <Logo logoClasses={""} />
 
           <h3 className="mt-10">
@@ -42,7 +42,7 @@ export const Sidetext = ({ content, path, login_signup }: Props) => {
           <p className="font-normal">
             {" "}
             {content}{" "}
-            <button className="text-accent" onClick={handleClick}>
+            <button className="text-accent animated-links" onClick={handleClick}>
               {login_signup}
             </button>
           </p>

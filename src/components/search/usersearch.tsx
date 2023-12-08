@@ -9,7 +9,7 @@ export const UserSearch =()=>{
       Object.values(users)[0]))
       
      const filteredPersons = items.map(item=>item.filter((itemName:{name:string})=>{ return(itemName.name.toLowerCase().includes(searchlist.toLowerCase()))}))
-console.log(filteredPersons)
+
 
   const handleChange=((e:React.ChangeEvent<HTMLInputElement>)=>{
   setSearchlist(e.currentTarget.value)
@@ -18,8 +18,8 @@ console.log(filteredPersons)
 
   return(
     <>
-    <section className="flex flex-col h-[60vh]">
-     <input onChange={handleChange} type="search" placeholder="search"  className="outline-none border border-secondary"/>
+    <section className="fc-flex h-[60vh] mt-5">
+     <input onChange={handleChange} type="search" placeholder="search"  className="outline-none border border-secondary rounded-lg"/>
  <div className="h-[90%] overflow-auto w-[20rem] lg:w-[30rem] scrollbar my-5 rounded-xl border border-secondary p-2">
         <ul>
         { searchlist.length >= 1 ?  

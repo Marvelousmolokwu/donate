@@ -4,7 +4,7 @@ export const HomeAboutSection = () => {
   return (
     <section className="container text-center ">
       <h1 className=" py-5 lg:text-5xl">Why Choose Us</h1>
-      <div className="flex flex-col gap-5 lg:flex-row lg:justify-between lg:gap-2">
+      <div className="fc-flex gap-5 lg:flex-row lg:justify-between lg:gap-2">
         {/* the cards section */}
 
         <Card

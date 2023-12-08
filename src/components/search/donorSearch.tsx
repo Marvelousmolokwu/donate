@@ -21,8 +21,8 @@ export const DonorSearch = () => {
     return (
       <>
       
-      <section className="flex flex-col h-[60vh]">
-      <input onChange={handleChange} type="search" placeholder="search"  className="outline-none border border-secondary"/>
+      <section className="fc-flex h-[60vh] mt-5">
+      <input onChange={handleChange} type="search" placeholder="search"  className="outline-none border border-secondary rounded-lg"/>
         <div className="h-[90%] overflow-auto w-[20rem] lg:w-[30rem] scrollbar my-5 rounded-xl border border-secondary p-2">
           <ul >
            
@@ -52,7 +52,7 @@ export const DonorSearch = () => {
               </button>
             </li>
               )
-            ): (<h3 className="text-center"> User not Found!</h3>)
+            ): <h3 className="text-center"> User not Found!</h3>
      : user.map((user) => (
               <li
                 key={user.id}

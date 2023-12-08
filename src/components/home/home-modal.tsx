@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 export const HomeModal = () => {
   return (
     <>
-      <div className="flex flex-col gap-4 justify-center items-center ">
+      <div className="fc-flex gap-4 justify-center items-center ">
         <h3 className="lg:text-3xl" >Choose your account type</h3>
 
-        <div className="flex flex-col lg:flex-row text-center gap-4">
+        <div className="fc-flex lg:flex-row text-center gap-5">
           <div>
             <Link to="/donor/form1" className="hover:before:w-0">
               <div className="flex items-center justify-center px-6 py-4 bg-secondary ">

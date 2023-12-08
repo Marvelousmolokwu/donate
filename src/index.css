@@ -35,6 +35,7 @@
         scrollbar-width: thin;
      
       }
+     
 }
 
 @layer components{
@@ -64,6 +65,12 @@
 
 .d-flex{
    @apply flex justify-center items-center 
+}
+.fc-flex{
+  @apply flex flex-col
+}
+.fr-flex{
+  @apply  flex-row justify-between
 }
 
 .active-btn{

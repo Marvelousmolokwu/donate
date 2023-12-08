@@ -67,7 +67,7 @@ setAmountError("Can't withdraw Amount less than N2000!")
   </section>
   {amountInputed && withdrawSuccesful && <div className="text-center ">
 <h3>{`Your Widthdrawal of N${amount} was Successful! 🎉`}</h3>
-<Link to={"/donorlink/dashboard"} className=" text-primary font-semibold ">Back to home page</Link>
+<Link to={"/user/dashboard"} className=" text-primary font-semibold ">Back to home page</Link>
     </div>}
   {amountInputed && !withdrawSuccesful  && 
      <Button  content={"Withdraw"} btnClasses="bg-primary text-backgroundcolor "  handleClick={()=>WithdrawBtn()}/>

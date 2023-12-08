@@ -4,11 +4,11 @@ import { Button } from "../button/Button";
 import { TypingEffect } from "./typewriter/Typewriter";
 import { ParagraphText } from "../text/Text";
 import { useUserLoggedIn } from "../../utilities/context";
-import { Props } from "../../utilities/types";
+import { ButtonProps } from "../../utilities/types";
 
 
 
-export const HomeHero = ({ handleClick }: Props) => {
+export const HomeHero = ({ handleClick }: ButtonProps) => {
   const { loggedIn } = useUserLoggedIn();
 
   return (
@@ -27,7 +27,7 @@ export const HomeHero = ({ handleClick }: Props) => {
       </nav>
       {/* the main hero section */}
       <div className="h-20"></div>
-      <main className="flex flex-col  lg:flex-row-reverse justify-center lg:items-center lg:justify-between">
+      <main className="fc-flex  lg:flex-row-reverse justify-center lg:items-center lg:justify-between">
         <img
           src="https://res.cloudinary.com/ddgyd8szc/image/upload/v1693567782/International_cooperation-amico_eplubc.svg"
           className="h-[50vh] lg:w-[48%] lg:h-auto"

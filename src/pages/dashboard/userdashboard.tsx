@@ -39,7 +39,7 @@ export const Dashboard = () => {
             <div className="flex flex-col gap-3 shadow-md p-6 rounded-md text-left my-5 bg-kit  ">
               <div className="flex justify-between items-center  ">
                 <h1 className="text-lg font-semibold">Balance</h1>
-                <Link to={"/donorlink/accounts/profile"} className="text-backgroundcolor bg-primary  rounded-md py-2 px-4 ">Payout</Link>
+                <Link to={"/user/accounts/profile"} className="text-backgroundcolor bg-primary  rounded-md py-2 px-4 ">Payout</Link>
                  
                
              
@@ -110,7 +110,7 @@ export const Dashboard = () => {
           
             {
               <ul>
-                {donor.slice(0,seemore).map((donor)=> <li key={donor.id} className="border-b-2 border-accent  p-2   hover:bg-kit text-accent"><Link to ={`/donorlink/donorprofile/${donor.id}`}> <div className="flex items-center justify-between"><h4>{donor.id}. {donor.name}</h4> 
+                {donor.slice(0,seemore).map((donor)=> <li key={donor.id} className="border-b-2 border-accent  p-2   hover:bg-kit text-accent"><Link to ={`/user/donorprofile/${donor.id}`}> <div className="flex items-center justify-between"><h4>{donor.id}. {donor.name}</h4> 
                        
                        <img src={`https://flagsapi.com/${donor.country}/flat/32.png`} alt=""  /></div>
                        </Link> </li>)}
