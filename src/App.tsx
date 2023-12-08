@@ -15,7 +15,7 @@ function App() {
   const [loggedIn, setLoggedin] = useState(false);
   const { isloading } = useLoader();
   function handleLogin (state: boolean) {
-    console.log("hack")
+ 
     setLoggedin(state);
     
   };

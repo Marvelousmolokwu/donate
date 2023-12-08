@@ -36,7 +36,7 @@ const handleDonateButtonClick = (userId: SetStateAction<string>) => {
                     handleDonateButtonClick(item.name);
                    }}/>
                      <Link to={`/donordashboardprofile/${item.id}`}>
-             <div className="h-32 md:h-40 w-full rounded-md object-cover">
+             <div className="h-52 md:h-40 w-full rounded-md object-cover">
                <img
                  src={`${item.img}`}
                  alt="profile-pic"
@@ -60,7 +60,7 @@ const handleDonateButtonClick = (userId: SetStateAction<string>) => {
         </section>
         <section className="flex flex-col">
           <h2>Orphanages</h2>
-          <section className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+          <section className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
           {user.map((usertype)=>usertype.orphanage?.slice(0, orphanagedata).map((item)=>(
        
           <div key={item.id} className="card-styles relative">
@@ -70,7 +70,7 @@ const handleDonateButtonClick = (userId: SetStateAction<string>) => {
                    }}/>
                <Link to={`/donordashboardprofile/${item.id}`}>
                  
-             <div className="h-32 md:h-40 w-full rounded-md object-cover">
+             <div className="h-52 md:h-40 w-full rounded-md object-cover">
                <img
                  src={`${item.img}`}
                  alt="profile-pic"
@@ -96,7 +96,7 @@ const handleDonateButtonClick = (userId: SetStateAction<string>) => {
         <section className="flex flex-col">
           <h2>
             Others <span>(health funds, educational funds etc)</span>     </h2>
-            <section className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+            <section className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
             {user.map((usertype)=>usertype.others?.slice(0, otherdata).map((item)=>(
                <div key={item.id} className="card-styles relative">
               <Button content="Donate" btnClasses="bg-primary text-backgroundcolor my-3 absolute right-1" handleClick={()=>{
@@ -104,7 +104,7 @@ const handleDonateButtonClick = (userId: SetStateAction<string>) => {
                     handleDonateButtonClick(item.name);
                    }}/>
                      <Link to={`/donordashboardprofile/${item.id}`}>
-         <div className="h-32 md:h-40 w-full rounded-md object-cover">
+         <div className="h-52 md:h-40 w-full rounded-md object-cover">
            <img
              src={`${item.img}`}
              alt="profile-pic"

@@ -57,7 +57,8 @@ export const Viewuserprofile = () => {
   return (
     <>
      {ModalComp(<DonorBill name={selectedUserId}/>)}
-    <Navbar opennav={opennav} setOpennav={setOpennav} homelink={"/donordashboard"} search={<UserSearch />} explorelink={""} helplink={""} accountlink={""}/>
+    <Navbar opennav={opennav} setOpennav={setOpennav} homelink={"/donor/donordashboard"} search={<UserSearch />} explorelink={"/donor/explore"} helplink={"/donor/help"} accountlink={"/donor/donoraccounts/profile"}/>
+    <main  onClick={()=>setOpennav(false)}>
     <div className="h-20"></div>
       <section className="container lg:mt-16">
         <section>
@@ -144,6 +145,7 @@ export const Viewuserprofile = () => {
           </ul>
         </section>
       </section>
+      </main>
     </>
   );
 };

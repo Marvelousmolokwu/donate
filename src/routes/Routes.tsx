@@ -23,11 +23,13 @@ import { Donordashboard } from "../pages/dashboard/donordashboard";
 import { Viewuserprofile } from "../pages/viewdonorprofile/viewuserprofile";
 import { Explore } from "../pages/explore/Explore";
 import { Help } from "../pages/help/help";
-import { Accounts } from "../pages/accounts/accounts";
+
 import { ProfilePage } from "../pages/accounts/profilepage";
 import { Security } from "../pages/accounts/security";
 import { Notifications } from "../pages/accounts/notifications";
 import { Statement } from "../pages/accounts/statement";
+import { Useraccounts } from "../pages/accounts/userAccount";
+import { Donoraccounts } from "../pages/accounts/Donoraccount";
 
 export const Routes = () => {
   const {loggedIn} = useUserLoggedIn()
@@ -75,7 +77,7 @@ export const Routes = () => {
           <Route path="donorprofile/:id" element={<Viewdonorprofile/>}/>
           <Route path="explore" element={<Explore />} />
           <Route path="help" element={<Help />} />
-          <Route path="accounts" element={<Accounts />} >
+          <Route path="useraccounts" element={<Useraccounts/>} >
 <Route path="profile" element={<ProfilePage/>}/>
 <Route path="security" element={<Security/>}/>
 <Route path="notification" element={<Notifications/>}/>
@@ -86,7 +88,7 @@ export const Routes = () => {
           <Route path="donordashboard" element={<Donordashboard/>}/>
           <Route path="explore" element={<Explore />} />
           <Route path="help" element={<Help />} />
-          <Route path="accounts" element={<Accounts />} >
+          <Route path="donoraccounts" element={<Donoraccounts />} >
 <Route path="profile" element={<ProfilePage/>}/>
 <Route path="security" element={<Security/>}/>
 <Route path="notification" element={<Notifications/>}/>

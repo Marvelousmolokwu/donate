@@ -6,9 +6,11 @@ import { useState } from "react"
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/user/userslice';
 
+import { useNotification } from "../../hooks/useNotification";
+
 
 export const ProfilePage = () => {
-
+const {Notification, showNotification} = useNotification()
   const { ShowModal , ModalComp, hideModal} = useModal()
   const user = useSelector(selectUser)
    const handleClick = ()=>{
@@ -30,14 +32,16 @@ ShowModal()
     const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
     {hideModal()}
-alert("profile updated!")
+
+showNotification()
     
      
     };
-  {console.log(formData.name)}
+
   return (
  <>
- <section>
+{Notification("Profile Updated!")}
+ <section className="text-sm lg:text-lg">
     <Template mainInfo="Manage Your personal information here." btnText="Edit Profile"handleClick={handleClick}/>
        
        <Datacolumn contentName="Name" content={<p>{formData.name.length === 1 ?  "User": formData.name    }</p>}/>
@@ -51,7 +55,7 @@ alert("profile updated!")
             }/>
     </section>
 {ModalComp(
-   <form className="font-semibold w-[60%]"onSubmit={handleSubmit}>
+   <form className="font-semibold w-[80%] lg:w-[60%] text-sm lg:text-lg"onSubmit={handleSubmit}>
 <label htmlFor="">
    Name:
    <input type="text" name="name" value={formData.name} onChange={handleChange} />

@@ -23,8 +23,8 @@ const handleSubmit = (e:React.MouseEvent<HTMLButtonElement>)=>{
         
          <div className='flex flex-col justify-center items-center gap-3'>
             <Logo logoClasses='text-sm'/>
-            <h3>Always happy to serve</h3>
-         <h3>We typically reply in under 30 minutes</h3>
+            <h2>Always happy to serve</h2>
+         <h3 className='text-sm'>We typically reply in under 30 minutes</h3>
          <p className='text-sm'>customer support hours: 11am -8pm WAT on weekdays
          </p>
          <p className='text-sm rounded-md p-1 bg-kit'>{today}</p>

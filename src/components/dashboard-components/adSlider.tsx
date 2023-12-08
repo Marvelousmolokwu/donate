@@ -6,14 +6,14 @@ import "swiper/css";
 import "swiper/css/navigation";
 const AdSlider = () => {
   return (
-    <div className="  shadow-sm rounded-lg h-10 ">
+    <div className="  shadow-sm rounded-lg  ">
          <Swiper
          modules={[Autoplay]}
       spaceBetween={0}
       slidesPerView={1}
       speed={2000}
         loop={true}
-      onSlideChange={() => console.log('slide change')}
+      onSlideChange={() => {}}
       onSwiper={(swiper) => console.log(swiper)}
       autoplay={{
         delay: 10000,

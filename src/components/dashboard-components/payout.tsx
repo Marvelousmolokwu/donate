@@ -43,7 +43,7 @@ setAmountError("Can't withdraw Amount less than N2000!")
 <input type="submit" value={"Submit"} className="bg-primary text-backgroundcolor"  />
    </form> }
   
-   <section className={` ${amountInputed ?"-translate-x-0": "-translate-y-[200%]" } w-[80%]  -z-10 flex flex-col gap-5  `}>
+   <section className={` ${amountInputed ?"-translate-x-0": "-translate-y-[200%]" } w-[100%]  -z-10 flex flex-col gap-5  `}>
     
   
     <h3>Payout Review</h3>

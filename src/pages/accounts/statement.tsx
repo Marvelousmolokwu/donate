@@ -23,7 +23,7 @@ export const Statement = () => {
 
   return (
     <>
-    <section>
+    <section className="text-sm lg:text-lg">
 <Template mainInfo="Check the statements of all your transactions here" btnText={  <CalendarMonthIcon/>} handleClick={handleClick}/>
 <section className="text-center my-3">
 {Statement ? <h1>Account Statement</h1>: <h1>You haven't made any transactions yet!</h1>}
