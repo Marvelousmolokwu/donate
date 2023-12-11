@@ -3,7 +3,7 @@
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { Viewmodal } from "./view-modal";
 import { useModal } from "../../hooks/useModal";
 import { UserProfile } from "../../components/dashboard-components/user-profile";
@@ -15,13 +15,13 @@ import { selectUser } from '../../features/user/userslice';
 import donor from "../../data/donors.json"
 import AdSlider from "../../components/dashboard-components/adSlider";
 import { Link } from "react-router-dom";
-import { KycNotificaton } from "../../components/dashboard-components/kycNotificaton";
+
 
 
 
 export const Dashboard = () => {
   const [visible, setVisible] = useState(true);
-const [showKYC, setShowKYC] = useState(false)
+
   const { ModalComp, ShowModal } = useModal();
   const user = useSelector(selectUser);
   const [seemore, setSeemore] = useState(4)

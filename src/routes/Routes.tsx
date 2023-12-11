@@ -8,13 +8,13 @@ const LazyForgotPassword = React.lazy(()=> import("../pages/Registration/forgotp
 import {
   createBrowserRouter,
   createRoutesFromElements,
-  Navigate,
+
   Route,
   RouterProvider,
 } from "react-router-dom";
 import { Notfound } from "../pages/not.found/Not-found";
 import { Loader } from "../components/loader/loader";
-import { useUserLoggedIn } from "../utilities/context";
+
 import { DashboardLayout } from "../Layouts/DashboardLayout";
 import { Dashboard } from "../pages/dashboard/userdashboard";
 import { Viewdonorprofile } from "../pages/viewdonorprofile/Viewdonorprofile";
@@ -32,7 +32,7 @@ import { Useraccounts } from "../pages/accounts/userAccount";
 import { Donoraccounts } from "../pages/accounts/donoraccount";
 
 export const Routes = () => {
-  const {loggedIn} = useUserLoggedIn()
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route>
