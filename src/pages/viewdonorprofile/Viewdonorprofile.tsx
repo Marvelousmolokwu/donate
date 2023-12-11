@@ -87,6 +87,7 @@ export const Viewdonorprofile = () => {
           <ul className="mt-5">
             <Swiper
               spaceBetween={20}
+              loop={true}
               slidesPerView={3}
               breakpoints={{
                 640: { slidesPerView: 3 },

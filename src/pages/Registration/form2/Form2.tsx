@@ -85,8 +85,9 @@ const Form2 = () => {
                 if (files) {
                   const image = URL.createObjectURL(files[0]);
                   setImage( image)
-                  dispatch(setUser({...userDetails, picture: image}))
+                  dispatch(setUser({...userDetails, picture: image, useramount:0}))
                   setUpload(true);
+                  console.log(userDetails)
 
                   setTimeout(() => {
                     setUpload(false);

@@ -47,8 +47,7 @@ export const Routes = () => {
         <Route
           path={"/:user/form1"}
           element={
-            loggedIn ?
-            <Navigate to={"/"} />:
+            
             <React.Suspense fallback={<Loader />}>
               <LazyForm1 />
             </React.Suspense>

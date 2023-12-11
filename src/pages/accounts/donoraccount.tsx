@@ -6,24 +6,26 @@ import { Addfunds } from "../../components/dashboard-components/addFunds";
 import { amountInputed } from "../../utilities/context";
 import { navStyle } from "../../utilities/types";
 import { useState } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { selectUser } from '../../features/user/userslice';
+import { setUser } from "../../features/user/userslice";
 
 
 
 
 
 
-export type amounttype={
-    amount: number;
-    amountChange: (number:number)=>void;
-}
 
 export const Donoraccounts = () => {
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch()
   const [amount, setAmount] = useState<number>(0);
 
-  const amountChange = (number:number)=>{
+  const amountChange = (total:number)=>{
 
-    
-    setAmount(prev => prev + (number/ 1200) )
+    setAmount(total)
+  
+    dispatch(setUser({...user, useramount: amount + (total / 1200)}))
   }
 
  
@@ -34,11 +36,11 @@ export const Donoraccounts = () => {
   <section className="container">
 <amountInputed.Provider value={{amount, amountChange}}>
 
-<AccountHeader transactionType={<Addfunds/>} buttonName={"Add funds"} amount={amount}/></amountInputed.Provider>
+<AccountHeader transactionType={<Addfunds/>} buttonName={"Add funds"} amount={user.useramount}/></amountInputed.Provider>
   
     
     <section>
-<ul className="grid grid-cols-4 text-center bg-kit  pt-3 text-[13px] sm:text-sm md:text-lg lg:text-xl   font-semibold">
+<ul className="grid grid-cols-4 text-center bg-kit  pt-3 text-[13px] sm:text-sm  lg:text-xl   font-semibold">
    <NavLink style={navStyle} to={"profile"}>profile</NavLink>
     <NavLink style={navStyle} to={"security"}>security</NavLink>
     <NavLink style={navStyle} to={"notification"}>notification</NavLink>

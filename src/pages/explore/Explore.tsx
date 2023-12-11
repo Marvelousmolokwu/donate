@@ -28,7 +28,7 @@ useEffect((
 
 )=>{
  
-    axios(`https://newsapi.org/v2/everything?q=${query}&apiKey=e0fd1f3c41064fe6a56767bca4023873`).then((res) => {
+    axios(`https://newsapi.org/v2/everything?q=${query}&apiKey=${import.meta.env.VITE_NEWS_API_KEY}`).then((res) => {
         if (res.status === 200) {
           setData(res.data.articles);
        

@@ -1,5 +1,5 @@
 
-import { SetStateAction, useState } from "react";
+import { SetStateAction, useState} from "react";
 import { Button } from "../../components/button/Button";
 import user from "../../data/user.json"
 import { useModal } from "../../hooks/useModal";
@@ -8,19 +8,23 @@ import { selectUser } from "../../features/user/userslice";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
+
 export const Donordashboard = () => {
   const [ngodata, setngoData]= useState(4)
   const [orphanagedata, setOrphangeData]= useState(4)
   const [otherdata, setOtherdata] = useState(4)
+ 
   const {ShowModal, ModalComp} = useModal()
   const [selectedUserId, setSelectedUserId] = useState("you didn't select a user");
   const donor = useSelector(selectUser);
+
 
 const handleDonateButtonClick = (userId: SetStateAction<string>) => {
   setSelectedUserId(userId);
 };
   return (
     <>
+
  {ModalComp(<DonorBill name={selectedUserId}/>)}
               <section className="container text-primary">
         <h1 className="mb-5">Hello {donor.name ? donor.name : "User"}</h1>

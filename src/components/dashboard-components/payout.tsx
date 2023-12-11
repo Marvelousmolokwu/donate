@@ -4,6 +4,7 @@ import { Button } from "../button/Button"
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/user/userslice';
 import { Link } from "react-router-dom"
+import { useAmount } from "../../utilities/context";
 
 
 
@@ -13,6 +14,8 @@ export const Payout = () => {
 const [amountError, setAmountError] = useState("")
     const [amountToWidthdraw,  setAmountToWithdraw] = useState<number>(0)
     const user = useSelector(selectUser)
+
+    const {amountChange} = useAmount()
     const handleClick =(e:React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault()
         if(amountToWidthdraw <= 1000){
@@ -25,11 +28,12 @@ setAmountError("Can't withdraw Amount less than N2000!")
     }
     const WithdrawBtn = ()=>{
     setWithdrawSuccesful(true)
+    amountChange(total)
     }
     const amount: number = amountToWidthdraw;
     const charges: number = 10;
     const total = amount + charges;
-   
+
   return (
    <>
    <section className="flex flex-col items-center justify-center w-[80%] mt-5 overflow-hidden" onSubmit={handleClick}>

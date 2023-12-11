@@ -2,6 +2,7 @@
 import TwitterIcon from "@mui/icons-material/Twitter";
 import {useState} from "react"
 import { Button } from "../button/Button";
+import { useNavigate } from "react-router-dom";
 
 
 type  Props ={
@@ -10,7 +11,7 @@ type  Props ={
   twitterlink: string
 }
 export const UserProfile = ({picture, username, twitterlink}:Props) => {
-
+const navigate = useNavigate()
     const [copied, setCopied] = useState(false)
     const referencelink = "uhuuh3444"
     const showCopiedPrompt =(()=>{
@@ -31,8 +32,10 @@ export const UserProfile = ({picture, username, twitterlink}:Props) => {
         <a href={twitterlink}><TwitterIcon className="cursor-pointer" /></a>
       </div>
 <div className=" flex flex-col w-full gap-4" >
-<Button content="Accounts" handleClick={()=>{}} btnClasses="border-2 border-primary text-primary"/>
-<Button content="Payouts" handleClick={()=>{}} btnClasses="border-2 border-primary text-primary"/>
+<Button content="Accounts" handleClick={()=>{
+  navigate("/user/useraccounts/profile")
+}} btnClasses="border-2 border-primary text-primary"/>
+
 
 </div>
 <p className="text-lightBlue cursor-pointer text-sm "> referral Link :  <span onClick={()=>{

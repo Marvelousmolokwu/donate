@@ -12,3 +12,7 @@ export  type ButtonProps = {
   
     };
   };
+  export type amounttype={
+    amount: number;
+    amountChange: (number:number)=>void;
+}

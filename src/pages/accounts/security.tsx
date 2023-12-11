@@ -17,11 +17,12 @@ ShowModal()
 e.preventDefault()
 hideModal()
 showNotification()
-{Notification("Password Updated!")}
+
+
   }
   return (
     <>
-    
+    {Notification("Password Updated!")}
     <section className="text-sm lg:text-lg">
     <Template mainInfo="Manage Your security settings  here." btnText="Change password" handleClick={handleClick}/>
        

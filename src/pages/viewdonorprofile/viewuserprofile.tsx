@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams} from "react-router-dom";
 import { ParagraphText } from "../../components/text/Text";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
@@ -44,7 +44,20 @@ export const Viewuserprofile = () => {
   if (loading) {
     return <div className="container"><ProfileSkeleton/></div>;
   }
-
+  const usersToDisplay = user.reduce<User[]>((acc, section) => {
+    let filteredUsers: User[] = [] ;
+    if (section.NGO) {
+      filteredUsers = section.NGO.filter((ngo) => ngo.id !== matchedUser?.id);
+    } else if (section.orphanage) {
+      filteredUsers = section.orphanage.filter((orphanage) => orphanage.id !== matchedUser?.id);
+    } else if (section.others) {
+      filteredUsers = section.others.filter((other) => other.id !== matchedUser?.id);
+    }
+    if (filteredUsers) {
+      acc.push(...filteredUsers);
+    }
+    return acc;
+  }, []);
   const handleDonateButtonClick = (userId: string) => {
     setSelectedUserId(userId);
   };
@@ -82,6 +95,7 @@ export const Viewuserprofile = () => {
             <Swiper
               spaceBetween={20}
               slidesPerView={3}
+             
               breakpoints={{
                 640: { slidesPerView: 3 },
                 800: { slidesPerView: 5 },
@@ -89,59 +103,22 @@ export const Viewuserprofile = () => {
               onSlideChange={() => console.log("slide change")}
               onSwiper={(swiper) => console.log(swiper)}
             >
-              {user.map((section) => {
-                 if (section.orphanage) {
-                    return section.orphanage.map((orphanage) => (
-                      <li key={orphanage.id}>
-                        <SwiperSlide>
-                          <Link to={`/donordashboardprofile/${orphanage.id}`} >
+            {usersToDisplay.map((user) => (
+               <li>
+            <SwiperSlide key={user.id}>
+                          <a href={`/donordashboardprofile/${user.id}`} >
                           <div className="shadow-md rounded-md my-2 p-5 flex flex-col items-center h-[12rem] text-center gap-3">
                               <div className="bg-center bg-no-repeat h-20 w-20 rounded-full bg-kit border-4 border-accent bg-profile">
-                                <img src={orphanage.img} alt="" className="h-full w-full rounded-full" />
+                                <img src={user.img} alt="" className="h-full w-full rounded-full" />
                               </div>
-                              <h3 className="text-sm">{orphanage.name}</h3>
+                              <h3 className="text-sm">{user.name}</h3>
                             </div>
-                          </Link>
+                          </a>
                         </SwiperSlide>
                       </li>
-                    ));
-                  }
-                else if (section.NGO) {
-                    
-                  return section.NGO.map((ngo) => (
-                    <li key={ngo.id}>
-                      <SwiperSlide>
-                        <Link to={`/donordashboardprofile/${ngo.id}`}>
-                          <div className="shadow-md rounded-md my-2 p-5 flex flex-col items-center h-[12rem] text-center gap-3">
-                            <div className="bg-center bg-no-repeat h-20 w-20 rounded-full bg-kit border-4 border-accent bg-profile">
-                              <img src={ngo.img} alt="" className="h-full w-full rounded-full" />
-                            </div>
-                            <h3 className="text-sm">{ngo.name}</h3>
-                          </div>
-                        </Link>
-                      </SwiperSlide>
-                    </li>
-                  ));
-                }  else if (section.others) {
-                  return section.others.map((other) => (
-                    <li key={other.id}>
-                      <SwiperSlide>
-                        <Link to={`/donordashboardprofile/${other.id}`}>
-                        <div className="shadow-md rounded-md my-2 p-5 flex flex-col items-center h-[12rem] text-center gap-3">
-                            <div className="bg-center bg-no-repeat h-20 w-20 rounded-full bg-kit border-4 border-accent bg-profile">
-                              <img src={other.img} alt="" className="h-full w-full rounded-full" />
-                            </div>
-                            <h3 className="text-sm">{other.name}</h3>
-                          </div>
-                        </Link>
-                      </SwiperSlide>
-                    </li>
-                  ));
-                }
-                return null; // Handle other cases if needed
-              })}
-              <SwiperButton />
-            </Swiper>
+            ))}
+                <SwiperButton />
+                                  </Swiper>
           </ul>
         </section>
       </section>

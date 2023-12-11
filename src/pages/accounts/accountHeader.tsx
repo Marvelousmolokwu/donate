@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/user/userslice';
 
 
+
 type Props={
     transactionType: React.ReactNode,
     buttonName:string
@@ -19,6 +20,7 @@ const formmatedAmount = amount.toLocaleString('en-US', {
 });
     const {ShowModal, ModalComp} = useModal()
     const user =  useSelector(selectUser)
+
   return (
     <>
       {ModalComp(transactionType)}

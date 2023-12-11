@@ -5,6 +5,7 @@ interface user{
     username: string
     instagram: string
     email:string
+    useramount:number
 }
 
 const initialState : user={
@@ -12,7 +13,8 @@ const initialState : user={
     picture:'',
     username: '',
     instagram:'',
-    email:''
+    email:'',
+    useramount:0
 }
 
 const userslice = createSlice({
@@ -25,6 +27,7 @@ setUser:(state, action)=>{
     state.username = action.payload.username
     state.instagram = action.payload.instagram
     state.email = action.payload.email
+    state.useramount = action.payload.useramount
 }
     }
 })

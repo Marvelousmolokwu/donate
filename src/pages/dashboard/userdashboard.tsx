@@ -3,7 +3,7 @@
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Viewmodal } from "./view-modal";
 import { useModal } from "../../hooks/useModal";
 import { UserProfile } from "../../components/dashboard-components/user-profile";
@@ -15,20 +15,24 @@ import { selectUser } from '../../features/user/userslice';
 import donor from "../../data/donors.json"
 import AdSlider from "../../components/dashboard-components/adSlider";
 import { Link } from "react-router-dom";
+import { KycNotificaton } from "../../components/dashboard-components/kycNotificaton";
+
 
 
 export const Dashboard = () => {
   const [visible, setVisible] = useState(true);
-
+const [showKYC, setShowKYC] = useState(false)
   const { ModalComp, ShowModal } = useModal();
   const user = useSelector(selectUser);
   const [seemore, setSeemore] = useState(4)
   const handleSeemore=()=>{
     setSeemore(prev=> prev + 3)
   }
-  
+const amount = user.useramount.toFixed(2)
+
   return (
     <>
+   
       <main className="container lg:max-w-[85%]">
         <h1 className="font-semibold text-accent">Hello  { !user.name ? "User": user.name} </h1>
 
@@ -39,7 +43,7 @@ export const Dashboard = () => {
             <div className="flex flex-col gap-3 shadow-md p-6 rounded-md text-left my-5 bg-kit  ">
               <div className="flex justify-between items-center  ">
                 <h1 className="text-lg font-semibold">Balance</h1>
-                <Link to={"/user/accounts/profile"} className="text-backgroundcolor bg-primary  rounded-md py-2 px-4 ">Payout</Link>
+                <Link to={"/user/useraccounts/profile"} className="text-backgroundcolor bg-primary  rounded-md py-2 px-4 ">Payout</Link>
                  
                
              
@@ -50,7 +54,7 @@ export const Dashboard = () => {
                     visible ? "blur-none" : "blur-md"
                   }`}
                 >
-                  <h2>$0.00</h2>
+                  <h2>${amount}</h2>
 
                   <p className="text-sm font-semibold text-green">
                     <span className="bg-green p-1 rounded-md h-3 text-backgroundcolor mr-2 ">
@@ -101,7 +105,7 @@ export const Dashboard = () => {
             <AdSlider/>
           </div>
 {/* user profile */}
-          <div className=" card-styles flex flex-col items-center gap-6 w-full relative lg:col-start-4 lg:col-span-1 lg:row-start-1 ">
+          <div className=" card-styles flex flex-col items-center gap-7 w-full relative lg:col-start-4 lg:col-span-1 lg:row-start-1 ">
             <UserProfile picture={user.picture} username={user.username} twitterlink={user.socialmedialink}/>
           </div>
           {/* list of top donors */}
