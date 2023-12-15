@@ -58,7 +58,7 @@
 
     }
     .container{
-     @apply max-w-[80%] lg:max-w-[75%] mx-auto h-full my-5 
+     @apply max-w-[80%] lg:max-w-[80%] mx-auto h-full my-5 
     }
 }
 @layer utilities{

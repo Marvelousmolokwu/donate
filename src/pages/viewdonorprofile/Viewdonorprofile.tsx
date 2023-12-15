@@ -22,6 +22,7 @@ export const Viewdonorprofile = () => {
   const { id } = useParams() as { id: string };
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<Donor | null>(null);
+  const [showuser, setShowuser] = useState(false)
 
   useEffect(() => {
     // Simulate an asynchronous operation (e.g., fetching data) with a setTimeout
@@ -62,68 +63,72 @@ export const Viewdonorprofile = () => {
     <>
    
       <section className="container">
-  
-        <section className="lg:mt-16">
-          <div className="flex flex-col justify-center  lg:flex-row lg:justify-start lg:items-center lg:gap-5">
-            <div className="bg-center  bg-no-repeat h-32 w-32 lg:w-40 lg:h-40 rounded-full bg-kit border-4 border-accent bg-profile ">
-              <img
-                src={data.img}
-                alt=""
-                className="h-full w-full rounded-full"
-              />
-            </div>
-            <div className="flex flex-col gap-1 ">
-              <h2>{data.name}</h2>
-              <p>{data.email}</p>
-              <p>Given over ${data.donations} worth of donation</p>
-             
-            </div>
-          </div>
+      {showuser ?  <ProfileSkeleton/> :
+        <><section className="lg:mt-16">
+            <div className="flex flex-col justify-center  lg:flex-row lg:justify-start lg:items-center lg:gap-5">
+              <div className="bg-center  bg-no-repeat h-32 w-32 lg:w-40 lg:h-40 rounded-full bg-kit border-4 border-accent bg-profile ">
+                <img
+                  src={data.img}
+                  alt=""
+                  className="h-full w-full rounded-full" />
+              </div>
+              <div className="flex flex-col gap-1 ">
+                <h2>{data.name}</h2>
+                <p>{data.email}</p>
+                <p>Given over ${data.donations} worth of donation</p>
 
-          <ParagraphText content={data.description} />
-        </section>
-        <section className="text-accent mt-10">
-          <h2>More Donors</h2>
-          <ul className="mt-5">
-            <Swiper
-              spaceBetween={20}
-              loop={true}
-              slidesPerView={3}
-              breakpoints={{
-                640: { slidesPerView: 3 },
+              </div>
+            </div>
 
-                800: { slidesPerView: 5 },
-              }}
-              
-              onSlideChange={() => console.log("slide change")}
-              onSwiper={(swiper) => console.log(swiper)}
-            >
-              {otherDonors.map((donor) => (
-                
-                <li key={donor.id}>
-              
-                  <SwiperSlide>
-                  <Link to={`/user/donorprofile/${donor.id}` } onClick={()=> window.location.reload()}>
-                    <div className="shadow-md rounded-md my-2 p-5 flex flex-col items-center h-[12rem] text-center gap-3">
-                      <div className="bg-center  bg-no-repeat h-20 w-20 rounded-full bg-kit border-4 border-accent bg-profile ">
-                        <img
-                          src={donor.img}
-                          alt=""
-                          className="h-full w-full rounded-full"
-                        />
-                      </div>
-                      <h3>{donor.name}</h3>
-                      
-                    </div>
-                    </Link>
-                  </SwiperSlide>
-                
-                </li>
-              ))}
-               <SwiperButton />
-            </Swiper>
-          </ul>
-        </section>
+            <ParagraphText content={data.description} />
+          </section><section className="text-accent mt-10">
+              <h2>More Donors</h2>
+              <ul className="mt-5">
+                <Swiper
+                  spaceBetween={20}
+
+
+                  loop={true}
+                  breakpoints={{
+                    640: { slidesPerView: 3 },
+
+                    800: { slidesPerView: 5 },
+                  }}
+
+                  onSlideChange={() => console.log("slide change")}
+                  onSwiper={(swiper) => console.log(swiper)}
+                >
+                  {otherDonors.map((donor) => (
+
+                    <li key={donor.id}>
+
+                      <SwiperSlide>
+                        <Link to={`/user/donorprofile/${donor.id}`} onClick={() => {
+                          setShowuser(true);
+                          setTimeout(() => {
+                            setShowuser(false);
+                          }, 2000);
+                        } }>
+
+                          <div className="shadow-md rounded-md my-2 p-5 flex flex-col items-center h-[12rem] text-center gap-3">
+                            <div className="bg-center  bg-no-repeat h-20 w-20 rounded-full bg-kit border-4 border-accent bg-profile ">
+                              <img
+                                src={donor.img}
+                                alt=""
+                                className="h-full w-full rounded-full" />
+                            </div>
+                            <h3 className="text-sm">{donor.name}</h3>
+
+                          </div>
+                        </Link>
+                      </SwiperSlide>
+
+                    </li>
+                  ))}
+                  <SwiperButton />
+                </Swiper>
+              </ul>
+            </section></>}
       </section>
     </>
   );

@@ -2,6 +2,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { Sidetext } from "../../../components/registration-components/sidetext";
 import { Visibilityinput } from "../../../components/registration-components/visibilityinput";
 
+
 const Login = () => {
   const navigate = useNavigate()
   const { users = "" } = useParams() as { users: string };
@@ -20,9 +21,11 @@ const Login = () => {
         <form action="" className="md:w-[70%] lg:w-[48%]  " onSubmit={(e)=>{
           e.preventDefault()
           if (users === "donor") {
-            navigate("/donor/donordashboard")
+            navigate("/donor/donordashboard");
+
             }else{
-             navigate("/user/dashboard")
+             navigate("/user/dashboard");
+       
             }
         }}>
           <h2>Login</h2>

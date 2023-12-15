@@ -6,6 +6,7 @@ import { UserLoggedIn } from "./utilities/context";
 import { Provider } from "react-redux";
 import store from "./stores/store";
 
+
 export type UserLoggedIntype = {
   loggedIn: boolean;
   handleLogin: (state: boolean) => void;
@@ -22,10 +23,11 @@ function App() {
 
   return (
     <>
+   
     <Provider store={store}><UserLoggedIn.Provider value={{ loggedIn, handleLogin}}>
         {isloading ? <Loader /> : <Routes />}
       </UserLoggedIn.Provider></Provider>
-      
+ 
     </>
   );
 }

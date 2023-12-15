@@ -3,6 +3,8 @@ import user from "../../data/donors.json";
 import { useState } from "react";
 import { useModal } from "../../hooks/useModal";
 import { useNavigate } from "react-router-dom";
+
+ 
 export const DonorSearch = () => {
     const {hideModal} = useModal()
     const [searchlist, setSearchlist] = useState("")
@@ -15,7 +17,7 @@ export const DonorSearch = () => {
   const handleChange=((e:React.ChangeEvent<HTMLInputElement>)=>{
   setSearchlist(e.currentTarget.value)
 
-  hideModal()
+
   })
   
     return (
@@ -37,7 +39,9 @@ export const DonorSearch = () => {
               <button className="flex items-center justify-between w-full" onClick={()=>{ 
             
     navigate(`donorprofile/${user.id}`)
-    window.location.reload()}}>
+    hideModal()
+    window.location.reload()
+   }}>
                
               
                   <h4>
@@ -63,7 +67,9 @@ export const DonorSearch = () => {
                     ()=>{ 
                      
                     navigate(`donorprofile/${user.id}`) 
-                    window.location.reload()}
+                    hideModal()
+                    window.location.reload()
+                  }
                 
                    }>
                 

@@ -5,6 +5,8 @@ const LazyForm1 = React.lazy(()=> import("../pages/Registration/form1/Form1"))
 const LazyForm2 = React.lazy(() => import("../pages/Registration/form2/Form2"));
 const LazyLogin = React.lazy(() => import("../pages/Registration/login/Login"));
 const LazyForgotPassword = React.lazy(()=> import("../pages/Registration/forgotpassword/Forgotpassword"))
+const Lazyuserdashboard = React.lazy(()=> import("../Layouts/DashboardLayout"))
+const LazyDonorDashboard = React.lazy(()=>import("../Layouts/donordashboard"))
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -15,10 +17,10 @@ import {
 import { Notfound } from "../pages/not.found/Not-found";
 import { Loader } from "../components/loader/loader";
 
-import { DashboardLayout } from "../Layouts/DashboardLayout";
+
 import { Dashboard } from "../pages/dashboard/userdashboard";
 import { Viewdonorprofile } from "../pages/viewdonorprofile/Viewdonorprofile";
-import { DonorDashboardLayout } from "../Layouts/donordashboard";
+
 import { Donordashboard } from "../pages/dashboard/donordashboard";
 import { Viewuserprofile } from "../pages/viewdonorprofile/viewuserprofile";
 import { Explore } from "../pages/explore/Explore";
@@ -71,7 +73,7 @@ export const Routes = () => {
           }
         />
         <Route path="forgotpassword" element={<React.Suspense fallback={<Loader/>}><LazyForgotPassword /></React.Suspense>} />
-        <Route path="user" element={<DashboardLayout/>}>
+        <Route path={"user"} element={<React.Suspense fallback={<Loader/>}><Lazyuserdashboard/></React.Suspense>}>
           <Route path="dashboard" element={<Dashboard/>}/>
           <Route path="donorprofile/:id" element={<Viewdonorprofile/>}/>
           <Route path="explore" element={<Explore />} />
@@ -83,8 +85,10 @@ export const Routes = () => {
 <Route path="statement" element={<Statement/>}/>
           </Route>
         </Route>
-        <Route path="donor" element={<DonorDashboardLayout/>}>
+        <Route path={"donor"} element={<React.Suspense fallback={<Loader/>}><LazyDonorDashboard/></React.Suspense>}>
+        <Route path="donordashboardprofile/:id" element={<Viewuserprofile/>}/>
           <Route path="donordashboard" element={<Donordashboard/>}/>
+          
           <Route path="explore" element={<Explore />} />
           <Route path="help" element={<Help />} />
           <Route path="donoraccounts" element={<Donoraccounts />} >
@@ -93,8 +97,9 @@ export const Routes = () => {
 <Route path="notification" element={<Notifications/>}/>
 <Route path="statement" element={<Statement/>}/>
           </Route>
+         
         </Route>
-        <Route path="donordashboardprofile/:id" element={<Viewuserprofile/>}/>
+        
       
         <Route path="*" element={<Notfound />} />
       </Route>

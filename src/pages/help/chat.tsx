@@ -36,7 +36,7 @@ const handleSubmit = (e:React.MouseEvent<HTMLButtonElement>)=>{
 </div>
          <form className='flex bg-kit rounded-md p-2 justify-between' >
             <input value={chat}  onChange={(e)=>{setChat(e.target.value)}} type="text" placeholder='type something...' className='outline-none h-10 border-1 border-kit rounded-full w-[85%] '/>
-            <button onClick={ handleSubmit} className='bg-primary text-backgroundcolor rounded-full h-10 w-10 flex items-center justify-center'><SendIcon fontSize='medium'/></button>
+            <button onClick={ handleSubmit} className='bg-primary text-backgroundcolor rounded-full h-10 w-10 flex items-center justify-center  active:scale-[.8] active:saturate-200'><SendIcon fontSize='medium'/></button>
          </form>
          </div>
         

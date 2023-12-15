@@ -1,5 +1,5 @@
 
-import { SetStateAction, useState} from "react";
+import { SetStateAction, useState, useEffect} from "react";
 import { Button } from "../../components/button/Button";
 import user from "../../data/user.json"
 import { useModal } from "../../hooks/useModal";
@@ -7,13 +7,14 @@ import { DonorBill } from "../../components/dashboard-components/donorBill";
 import { selectUser } from "../../features/user/userslice";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { KycNotificaton } from "../../components/dashboard-components/kycNotificaton";
 
 
 export const Donordashboard = () => {
   const [ngodata, setngoData]= useState(4)
   const [orphanagedata, setOrphangeData]= useState(4)
   const [otherdata, setOtherdata] = useState(4)
- 
+  const[showKycNotification, setshowKycNotification] = useState(false)
   const {ShowModal, ModalComp} = useModal()
   const [selectedUserId, setSelectedUserId] = useState("you didn't select a user");
   const donor = useSelector(selectUser);
@@ -22,10 +23,21 @@ export const Donordashboard = () => {
 const handleDonateButtonClick = (userId: SetStateAction<string>) => {
   setSelectedUserId(userId);
 };
+useEffect(() => {
+  const delay = setTimeout(() => {
+   setshowKycNotification(true)
+  
+  }, 10000);
+
+
+  return () => clearTimeout(delay);
+}, []);
+
   return (
     <>
 
  {ModalComp(<DonorBill name={selectedUserId}/>)}
+ {showKycNotification ? <KycNotificaton/> : ""}
               <section className="container text-primary">
         <h1 className="mb-5">Hello {donor.name ? donor.name : "User"}</h1>
         <section className="fc-flex">
@@ -33,12 +45,12 @@ const handleDonateButtonClick = (userId: SetStateAction<string>) => {
          <section className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
         
          {user.map((usertype)=>usertype.NGO?.slice(0, ngodata).map((item)=>(
-           <div key={item.id} className="card-styles relative">
+           <div key={item.id} className="card-styles  relative">
                    <Button content="Donate" btnClasses="bg-primary text-backgroundcolor my-3 absolute right-1" handleClick={()=>{
                     ShowModal()
                     handleDonateButtonClick(item.name);
                    }}/>
-                     <Link to={`/donordashboardprofile/${item.id}`}>
+                     <Link to={`/donor/donordashboardprofile/${item.id}`}>
              <div className="h-52 md:h-40 w-full rounded-md object-cover">
                <img
                  src={`${item.img}`}
@@ -71,7 +83,7 @@ const handleDonateButtonClick = (userId: SetStateAction<string>) => {
                     ShowModal()
                     handleDonateButtonClick(item.name);
                    }}/>
-               <Link to={`/donordashboardprofile/${item.id}`}>
+               <Link to={`/donor/donordashboardprofile/${item.id}`}>
                  
              <div className="h-52 md:h-40 w-full rounded-md object-cover">
                <img
@@ -106,7 +118,7 @@ const handleDonateButtonClick = (userId: SetStateAction<string>) => {
                     ShowModal()
                     handleDonateButtonClick(item.name);
                    }}/>
-                     <Link to={`/donordashboardprofile/${item.id}`}>
+                     <Link to={`/donor/donordashboardprofile/${item.id}`}>
          <div className="h-52 md:h-40 w-full rounded-md object-cover">
            <img
              src={`${item.img}`}

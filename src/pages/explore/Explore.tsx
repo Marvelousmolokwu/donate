@@ -79,7 +79,7 @@ if (loading){
 <>
 
 
-  <section className="container">
+  <section className="container mt-10">
 
     <div className="lg:flex lg:justify-center ">
     <div className="lg:w-[50%] flex justify-center text-primary items-center border rounded-lg border-primary px-1 focus-within:border-2 focus-within:border-primary">

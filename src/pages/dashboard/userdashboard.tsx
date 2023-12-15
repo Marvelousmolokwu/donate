@@ -3,7 +3,7 @@
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 
-import {  useState } from "react";
+import {  useEffect, useState } from "react";
 import { Viewmodal } from "./view-modal";
 import { useModal } from "../../hooks/useModal";
 import { UserProfile } from "../../components/dashboard-components/user-profile";
@@ -15,13 +15,14 @@ import { selectUser } from '../../features/user/userslice';
 import donor from "../../data/donors.json"
 import AdSlider from "../../components/dashboard-components/adSlider";
 import { Link } from "react-router-dom";
+import { KycNotificaton } from "../../components/dashboard-components/kycNotificaton";
 
 
 
 
 export const Dashboard = () => {
   const [visible, setVisible] = useState(true);
-
+const[showKycNotification, setshowKycNotification] = useState(false)
   const { ModalComp, ShowModal } = useModal();
   const user = useSelector(selectUser);
   const [seemore, setSeemore] = useState(4)
@@ -30,13 +31,24 @@ export const Dashboard = () => {
   }
 const amount = user.useramount.toFixed(2)
 
+useEffect(() => {
+  const delay = setTimeout(() => {
+   setshowKycNotification(true)
+  
+  }, 10000);
+
+
+  return () => clearTimeout(delay);
+}, []);
+
   return (
     <>
-   
-      <main className="container lg:max-w-[85%]">
+{showKycNotification ? <KycNotificaton/> : ""}
+
+      <main className="container lg:max-w-[80%]">
         <h1 className="font-semibold text-accent">Hello  { !user.name ? "User": user.name} </h1>
 
-        <section className="lg:grid lg:grid-cols-4 lg:gap-4 lg:grid-rows-[20rem, 1fr] lg:place-items-start place-content-between">
+        <section className="lg:grid lg:grid-cols-4 lg:gap-4 lg:grid-rows-[20rem, 1fr] lg:place-items-start place-content-between ">
           {/* the balance card */}
           <div className="lg:col-start-1  row-start-1 w-full">
             {" "}
