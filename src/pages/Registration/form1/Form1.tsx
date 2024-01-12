@@ -14,7 +14,7 @@ const Form1 = () => {
   const navigate = useNavigate();
   const [name, setName] = useState("") ;
   const [username, setUsername] = useState("");
-  const [socialmedialink, setSocialmedialink] = useState("");
+  const [twitter, setTwitter] = useState("");
   const [email, setEmail] = useState("");
   const dispatch = useDispatch();
   const handleSignup = (e: React.FormEvent<HTMLFormElement>) => {
@@ -23,7 +23,7 @@ const Form1 = () => {
       setUser({
         name: name,
         username: username,
-        socialmedialink: socialmedialink,
+        twitter: twitter,
         email: email,
       })
     );
@@ -92,7 +92,7 @@ const Form1 = () => {
               type="text"
               name="social_link"
               id="social_link"
-              onChange={(e) => setSocialmedialink(e.target.value)}
+              onChange={(e) => setTwitter(e.target.value)}
             />
           </label>
 

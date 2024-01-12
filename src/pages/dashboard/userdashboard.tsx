@@ -118,7 +118,7 @@ useEffect(() => {
           </div>
 {/* user profile */}
           <div className=" card-styles flex flex-col items-center gap-7 w-full relative lg:col-start-4 lg:col-span-1 lg:row-start-1 ">
-            <UserProfile picture={user.picture} username={user.username} twitterlink={user.socialmedialink}/>
+            <UserProfile picture={user.picture} username={user.username} twitterlink={user.twitter}/>
           </div>
           {/* list of top donors */}
           <div className="lg:col-start-2 lg:col-span-2 lg:row-start-2 w-full mr-5">

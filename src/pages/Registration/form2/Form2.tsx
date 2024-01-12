@@ -49,7 +49,7 @@ const Form2 = () => {
 
         <form className="md:w-[70%] lg:w-[48%]" onSubmit={handleSubmit}>
           {upload && (
-            <label className="text-accent bg-backgroundcolor p-5 shadow-md fixed top-10 rounded-md z-20">
+            <label className="bg-primary text-backgroundcolor p-3 shadow-md fixed top-10 rounded-md z-20">
               file uploaded!
             </label>
           )}

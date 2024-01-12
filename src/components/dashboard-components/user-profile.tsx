@@ -3,6 +3,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import {useState} from "react"
 import { Button } from "../button/Button";
 import { useNavigate } from "react-router-dom";
+import { useNotification } from "../../hooks/useNotification";
 
 
 type  Props ={
@@ -13,6 +14,7 @@ type  Props ={
 export const UserProfile = ({picture, username, twitterlink}:Props) => {
 const navigate = useNavigate()
     const [copied, setCopied] = useState(false)
+    const {Notification} = useNotification()
     const referencelink = "uhuuh3444"
     const showCopiedPrompt =(()=>{
         setCopied(true)
@@ -21,15 +23,17 @@ const navigate = useNavigate()
         }, 2000
         )
       })
+     
   return (
     <>
+    {Notification("Link not inputed!")}
     <div className="bg-center  bg-no-repeat h-32 w-32 rounded-full bg-kit border-4 border-accent bg-profile ">
 <img src={picture} alt="" className="h-full w-full rounded-full"/>
 </div>
 <h3><span>@ {!username ? "user": username }</span></h3>
 <div className="flex gap-3">
        
-        <a href={twitterlink}><TwitterIcon className="cursor-pointer" /></a>
+        <a href={`${twitterlink}`} target="_blank"><TwitterIcon className="cursor-pointer" /></a>
       </div>
 <div className=" flex flex-col w-full gap-4" >
 <Button content="Accounts" handleClick={()=>{

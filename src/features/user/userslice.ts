@@ -3,7 +3,7 @@ interface user{
     name: string
     picture: string
     username: string
-    instagram: string
+    twitter: string
     email:string
     useramount:number
 }
@@ -12,7 +12,7 @@ const initialState : user={
     name: '',
     picture:'',
     username: '',
-    instagram:'',
+    twitter:'',
     email:'',
     useramount:0
 }
@@ -25,7 +25,7 @@ setUser:(state, action)=>{
     state.name = action.payload.name
     state.picture = action.payload.picture
     state.username = action.payload.username
-    state.instagram = action.payload.instagram
+    state.twitter = action.payload.twitter
     state.email = action.payload.email
     state.useramount = action.payload.useramount
 }

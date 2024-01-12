@@ -72,7 +72,7 @@ export const Viewuserprofile = () => {
      {ModalComp(<DonorBill name={selectedUserId}/>)}
   <main>
     
-      <section className="container lg:mt-16">
+      <section className="container lg:mt-5">
         {showuser ?  <ProfileSkeleton/> : <><section>
             <div className="flex flex-col justify-center  lg:flex-row lg:justify-start lg:items-center lg:gap-5">
               <div className="bg-center  bg-no-repeat h-32 w-32 lg:w-40 lg:h-40 rounded-full bg-kit border-4 border-accent bg-profile ">
